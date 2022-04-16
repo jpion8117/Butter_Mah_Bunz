@@ -5,8 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Butter_Mah_Bunz"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="896" Width="414">
     <Grid>
+        <Frame Content="Frame"/>
 
     </Grid>
 </Window>
