@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<main>
+	<menuItems>
+		<item>
+			<name>Eggscellent Burger</name>
+			<description></description>
+			<price>13.69</price>
+			<imageURL>Images/eggBurg.jpg</imageURL>
+		</item>
+	</menuItems>
+	<enhancmentItems>
+		<enhancment>
+			<name>+ cheese</name>
+			<price>0.50</price>
+		</enhancment>
+	</enhancmentItems>
+</main>
