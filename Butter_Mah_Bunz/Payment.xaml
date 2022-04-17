@@ -49,6 +49,8 @@
                    Height="76" Width="226"/>
             <CheckBox Content="Pay On Pickup" FontSize="30" HorizontalAlignment="Center" Margin="0,414,0,0" 
                       VerticalContentAlignment="Center" VerticalAlignment="Top" Width="226" Height="45"/>
+            <Label Content="Pickup Time" HorizontalAlignment="Left" Margin="68,468,0,0" VerticalAlignment="Top" Width="101" Height="30"/>
+            <ListBox d:ItemsSource="{d:SampleData ItemCount=5}" Margin="169,469,94,111"/>
         </Grid>
         <Grid Width="414" Margin="0,607,0,100">
         </Grid>
