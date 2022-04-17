@@ -9,6 +9,10 @@ namespace Backend
     internal class Schedule
     {
         private List<ScheduleDay> _schedule = new List<ScheduleDay>();
+        /// <summary>
+        /// Property returns an ordered array of the week's schedule starting with the schedule for today.
+        /// index 0 should always resolve to today's schedule.
+        /// </summary>
         public ScheduleDay[] ScheduleDays
         {
             get
@@ -24,18 +28,17 @@ namespace Backend
                 ScheduleDay? todaysSchedule = null;
                 for (int i = 0; i < _schedule.Count; i++)
                 {
-                    if ((int)_schedule[i].Day - 2 == (int)today.DayOfWeek)
+                    if ((int)_schedule[i].Day == (int)today.DayOfWeek)
                     {
                         _schedule[i].Day = ScheduleDayOfWeek.Today;
                         todaysSchedule = _schedule[i];
                     }
-                    else if ((int)_schedule[i].Day - 2 == (int)tomorrow.DayOfWeek)
+                    else if ((int)_schedule[i].Day == (int)tomorrow.DayOfWeek)
                     {
                         _schedule[i].Day = ScheduleDayOfWeek.Tomorrow;
                     }
 
                 }
-
                 while (_schedule[0] != todaysSchedule)
                 {
                     _schedule.Add(_schedule[0]);
@@ -46,6 +49,9 @@ namespace Backend
                 return _schedule.ToArray();
             }
         }
+        /// <summary>
+        /// 
+        /// </summary>
         public ScheduleDay AddDay
         {
             set { _schedule.Add(value); }
