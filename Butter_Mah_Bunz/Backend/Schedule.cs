@@ -50,7 +50,7 @@ namespace Backend
             }
         }
         /// <summary>
-        /// 
+        /// set a ScheduleDay to this property to add it to the schedule.
         /// </summary>
         public ScheduleDay AddDay
         {
