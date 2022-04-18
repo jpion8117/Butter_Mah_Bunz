@@ -10,10 +10,10 @@
     <Grid Width="414" Height="896" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#FFEDD4AB">
         <Grid HorizontalAlignment="Stretch" Height="166" VerticalAlignment="Top" Background="#FFD28B17">
             <Image Margin="10,12,249,12" Source="/Media/BMB.png" Stretch="Fill"/>
-            <TextBlock HorizontalAlignment="Left" Height="30" Margin="170,12,0,0" TextWrapping="Wrap" Text="Location" VerticalAlignment="Top" Width="237" TextAlignment="Center" FontSize="22"/>
-            <TextBlock x:Name="headLocation" HorizontalAlignment="Left" Height="30" Margin="170,45,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="237" TextAlignment="Center" FontSize="22"/>
-            <TextBlock HorizontalAlignment="Left" Height="30" Margin="170,83,0,0" TextWrapping="Wrap" Text="Hours" VerticalAlignment="Top" Width="237" TextAlignment="Center" FontSize="22"/>
-            <TextBlock x:Name="headHours" HorizontalAlignment="Left" Height="30" Margin="170,124,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="237" TextAlignment="Center" FontSize="22"/>
+            <TextBlock HorizontalAlignment="Left" Height="30" Margin="170,12,0,0" TextWrapping="Wrap" Text="Location" VerticalAlignment="Top" Width="237" TextAlignment="Center" FontSize="22" FontFamily="/Fonts/#Indie Flower" FontWeight="UltraBold"/>
+            <TextBlock x:Name="headLocation" HorizontalAlignment="Left" Height="30" Margin="170,45,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="237" TextAlignment="Center" FontSize="22" FontFamily="/Fonts/#Indie Flower" FontWeight="UltraBold"/>
+            <TextBlock HorizontalAlignment="Left" Height="30" Margin="170,83,0,0" TextWrapping="Wrap" Text="Hours" VerticalAlignment="Top" Width="237" TextAlignment="Center" FontSize="22" FontFamily="/Fonts/#Indie Flower" FontWeight="UltraBold"/>
+            <TextBlock x:Name="headHours" HorizontalAlignment="Left" Height="30" Margin="170,124,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="237" TextAlignment="Center" FontSize="22" FontFamily="/Fonts/#Indie Flower" FontWeight="UltraBold"/>
         </Grid>
 
     </Grid>
