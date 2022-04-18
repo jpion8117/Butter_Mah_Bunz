@@ -18,7 +18,7 @@
 
     <Grid Width="414" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Height="896">
         <Grid.Background>
-            <ImageBrush ImageSource="/splashback.jpg" Stretch="UniformToFill"/>
+            <ImageBrush ImageSource="/Media/splashBack.jpg" Stretch="UniformToFill"/>
         </Grid.Background>
         <Image x:Name="logo" Source="/Media/bmb.png" Stretch="Fill" Width="300" Height="300" HorizontalAlignment="Center" VerticalAlignment="Center" RenderTransformOrigin="0.5,0.5">
             <Image.RenderTransform>
