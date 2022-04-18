@@ -15,6 +15,35 @@ using System.Windows.Shapes;
 
 namespace Butter_Mah_Bunz
 {
+    public struct CoreComponents
+    {
+        static private readonly Backend.Schedule _schedule = new Backend.Schedule();
+        
+        /// <summary>
+        /// Access the schedule
+        /// </summary>
+        static Backend.Schedule Schedule
+        {
+            get { return _schedule; }
+        }
+
+        /// <summary>
+        /// State flag indicating the schedule has been loaded and is ready for use
+        /// </summary>
+        static bool ScheduleReady 
+        {
+            get
+            { return  _schedule.ScheduleDays.Length == 7; }
+        }
+
+        /// <summary>
+        /// Load the schedule from file.
+        /// </summary>
+        static void loadSchedule()
+        {
+
+        }
+    }
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
@@ -23,6 +52,8 @@ namespace Butter_Mah_Bunz
         public MainWindow()
         {
             InitializeComponent();
+
+            MainWindowFrame.NavigationService.Navigate(new HomePage());
         }
     }
 }
