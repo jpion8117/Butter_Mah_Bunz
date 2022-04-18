@@ -8,26 +8,26 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Fonts\Chalk.ttf" />
-    <None Remove="Fonts\IndieFlower-Regular.ttf" />
-    <None Remove="Fonts\Roboto-Bold.ttf" />
-    <None Remove="Fonts\Roboto-Regular.ttf" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Resource Include="Fonts\Chalk.ttf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
+    <None Remove="Media\bmb.png" />
+    <None Remove="Media\placeholder.png" />
+    <None Remove="Media\placeorder.jpg" />
+    <None Remove="Media\splashBack.jpg" />
   </ItemGroup>
 
   <ItemGroup>
     <Resource Include="Fonts\IndieFlower-Regular.ttf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Fonts\Roboto-Bold.ttf">
+    <Resource Include="Media\bmb.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Fonts\Roboto-Regular.ttf">
+    <Resource Include="Media\placeholder.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Media\placeorder.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Media\splashBack.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>
