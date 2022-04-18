@@ -23,6 +23,13 @@ namespace Butter_Mah_Bunz
         public HomePage()
         {
             InitializeComponent();
+
+            tmrwHours.Text = "8:00am - 3:00pm";
+            tmrwLocation.Text = "69420 [ ]";
+
+            mid2kDisasterFilm_day.Content = "Wednesday";
+            mid2kDisasterFilm_Hours.Text = "8:00am - 3:00pm";
+            mid2kDisasterFilm_Location.Text = "420 I Couldn't Come Up With Anything";
         }
     }
 }

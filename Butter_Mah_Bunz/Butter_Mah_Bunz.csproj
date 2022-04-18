@@ -15,6 +15,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Fonts\IndieFlower-Regular.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Media\bmb.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
