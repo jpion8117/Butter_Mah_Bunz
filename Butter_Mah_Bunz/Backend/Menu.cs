@@ -16,6 +16,7 @@ namespace Backend
         
         private List<Item> _menuItems = new List<Item>();
         private List<Enhancment> _enhancments = new List<Enhancment>();
+        private bool _menuReady = false;
 
         public List<Item> MenuItems
         {
@@ -26,14 +27,25 @@ namespace Backend
             get { return _enhancments; }
         }
         
+        public bool MenuReady
+        {
+            get { return _menuReady; }
+        }
+
         public void LoadMenu()
         {
+            bool menuFound = false;
+            bool enhancmentsFound = false;
+            
             XmlDocument doc = new XmlDocument();
             doc.Load(MENU_FILE_PATH);
 
             //parse menu item data from the XML menu doc.
             foreach (XmlNode node in doc.GetElementsByTagName("item"))
             {
+                //note that menu was found
+                menuFound = true;
+
                 //variables for holding the item info
                 string name = "";
                 string description = "";
@@ -60,6 +72,9 @@ namespace Backend
             //locate all nodes in the enhancment section of the xml menu file
             foreach (XmlNode node in doc.GetElementsByTagName("enhancment"))
             {
+                //note that enhancment menu was found
+                enhancmentsFound = true;
+
                 string name = "";
                 double price = 0;
 
@@ -75,6 +90,9 @@ namespace Backend
                 //add the enhancment to the enhancments list
                 _enhancments.Add(new Enhancment(name, price));
             }
+
+            //set menu ready
+            _menuReady = menuFound && enhancmentsFound;
         }
     }
 }
