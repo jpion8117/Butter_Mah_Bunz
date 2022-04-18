@@ -6,8 +6,12 @@
         xmlns:local="clr-namespace:Butter_Mah_Bunz"
         mc:Ignorable="d"
         Title="MainWindow" Height="896" Width="414">
+    <Window.Resources>
+        <FontFamily x:Key="Chalk">/Fonts/#Chalkboard by Marta van Eck</FontFamily>
+    </Window.Resources>
     <Grid>
-        <Frame Content="Frame"/>
+        <Frame x:Name="frame" Content="Frame"/>
+        
 
     </Grid>
 </Window>

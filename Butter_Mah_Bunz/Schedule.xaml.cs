@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace Butter_Mah_Bunz
 {
     /// <summary>
-    /// Interaction logic for Page1.xaml
+    /// Interaction logic for SchedulePage.xaml
     /// </summary>
-    public partial class Page1 : Page
+    public partial class SchedulePage : Page
     {
-        public Page1()
+        public SchedulePage()
         {
             InitializeComponent();
         }
