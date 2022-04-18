@@ -53,7 +53,7 @@ namespace Butter_Mah_Bunz
         {
             InitializeComponent();
 
-            MainWindowFrame.NavigationService.Navigate(new SplashPage());
+            MainWindowFrame.NavigationService.Navigate(new HomePage());
         }
     }
 }
