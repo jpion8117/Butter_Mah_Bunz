@@ -7,4 +7,18 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Media\bmb.png" />
+    <None Remove="Media\placeholder.png" />
+    <None Remove="Media\splashBack.jpg" />
+    <None Remove="splashBack.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Media\bmb.png" />
+    <Resource Include="Media\placeholder.png" />
+    <Resource Include="Media\splashBack.jpg" />
+    <Resource Include="splashback.jpg" />
+  </ItemGroup>
+
 </Project>

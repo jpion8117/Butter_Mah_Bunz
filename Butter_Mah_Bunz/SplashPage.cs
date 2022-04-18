@@ -26,6 +26,7 @@ namespace Butter_Mah_Bunz
             InitializeComponent();
 
             Storyboard spinAnimation = (Storyboard)FindResource("SpinFish");
+            spinAnimation.RepeatBehavior = RepeatBehavior.Forever;
             spinAnimation.Begin();
         }
     }
