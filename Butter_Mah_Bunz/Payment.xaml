@@ -60,9 +60,10 @@
                    VerticalAlignment="Top" RenderTransformOrigin="0.184,-0.231" Height="50" Width="161"
                    FontSize="30" FontFamily="Comic Sans MS"/>
             <Button Content="Finish Order" HorizontalAlignment="Center" Margin="0,50,0,0" VerticalAlignment="Top"
-                    Background="#CF3613" BorderBrush="Black" BorderThickness="2px" Height="60" Width="200" />
+                    Background="#CF3613" BorderBrush="Black" BorderThickness="2px" Height="60" Width="200" FontFamily="Comic Sans MS"
+                    FontSize="25"/>
             <Button Content="Cancel" HorizontalAlignment="Center" Margin="0,115,0,0" VerticalAlignment="Top"
-                    Height="35" Width="210" Background="#9A5040"/>
+                    Height="35" Width="210" Background="#9A5040" FontFamily="Comic Sans MS" FontSize="22"/>
         </Grid>
     </Grid>
 </Page>
