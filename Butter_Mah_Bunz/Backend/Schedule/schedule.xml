@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<schedule>
+	<scheduleDay>
+		<day>Monday</day>
+		<openHour>11</openHour>
+		<openMin>00</openMin>
+		<closeHour>20</closeHour>
+		<closeMin>00</closeMin>
+		<locationStreet>421 S Airport</locationStreet>
+		<locationEnd>Traverse City, MI 49685</locationEnd>
+	</scheduleDay>
+	<scheduleDay>
+		<day>Tuesday</day>
+		<openHour>11</openHour>
+		<openMin>00</openMin>
+		<closeHour>20</closeHour>
+		<closeMin>00</closeMin>
+		<locationStreet>421 S Airport</locationStreet>
+		<locationEnd>Traverse City, MI 49685</locationEnd>		
+	</scheduleDay>
+	<scheduleDay>
+		<day>Wednesday</day>
+		<openHour>11</openHour>
+		<openMin>00</openMin>
+		<closeHour>20</closeHour>
+		<closeMin>00</closeMin>
+		<locationStreet>421 S Airport</locationStreet>
+		<locationEnd>Traverse City, MI 49685</locationEnd>
+	</scheduleDay>
+	<scheduleDay>
+		<day>Thursday</day>
+		<openHour>11</openHour>
+		<openMin>00</openMin>
+		<closeHour>20</closeHour>
+		<closeMin>00</closeMin>
+		<locationStreet>421 S Airport</locationStreet>
+		<locationEnd>Traverse City, MI 49685</locationEnd>
+	</scheduleDay>
+	<scheduleDay>
+		<day>Friday</day>
+		<openHour>11</openHour>
+		<openMin>00</openMin>
+		<closeHour>20</closeHour>
+		<closeMin>00</closeMin>
+		<locationStreet>421 S Airport</locationStreet>
+		<locationEnd>Traverse City, MI 49685</locationEnd>
+	</scheduleDay>
+	<scheduleDay>
+		<day>Saturday</day>
+		<openHour>11</openHour>
+		<openMin>00</openMin>
+		<closeHour>20</closeHour>
+		<closeMin>00</closeMin>
+		<locationStreet>421 S Airport</locationStreet>
+		<locationEnd>Traverse City, MI 49685</locationEnd>
+	</scheduleDay>
+	<scheduleDay>
+		<day>Sunday</day>
+		<openHour>11</openHour>
+		<openMin>00</openMin>
+		<closeHour>20</closeHour>
+		<closeMin>00</closeMin>
+		<locationStreet>421 S Airport</locationStreet>
+		<locationEnd>Traverse City, MI 49685</locationEnd>
+	</scheduleDay>
+	<scheduleDay>
+		<day>Closed</day>
+		<openHour>Closed</openHour>
+		<openMin>Closed</openMin>
+		<closeHour>Closed</closeHour>
+		<closeMin>Closed</closeMin>
+		<locationStreet>Closed</locationStreet>
+		<locationEnd>Closed</locationEnd>
+	</scheduleDay>
+</schedule>	
