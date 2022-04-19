@@ -43,11 +43,11 @@ namespace Butter_Mah_Bunz
 
                 TimeSpan realLoadTime = loadEnd - loadStart;
 
-                if (realLoadTime.TotalSeconds < 10)
+                if (realLoadTime.TotalSeconds < 30)
                 {
                     DateTime artificialLoadStart = DateTime.Now;
                     TimeSpan artificialLoad = artificialLoadStart - artificialLoadStart; //should = 0
-                    int timeOfAL = new Random().Next(6);
+                    int timeOfAL = new Random().Next(10);
 
                     while (artificialLoad.TotalSeconds < timeOfAL)
                     {
