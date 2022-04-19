@@ -11,8 +11,8 @@ namespace Backend
     /// </summary>
     public enum ScheduleDayOfWeek
     {
-        Today,      //these will get assigned automatically based on the current day of the week
-        Tomorrow,   //when the schedule property of Backend.Schedule is requested.
+        Today = -2,     //these will get assigned automatically based on the current day of the week
+        Tomorrow,       //when the schedule property of Backend.Schedule is requested.
         Sunday,
         Monday,
         Tuesday,
@@ -34,7 +34,7 @@ namespace Backend
             _startTime = start;
             _endTime = end;
         }
-        private var dumDum;
+
         private ScheduleDayOfWeek _day;
         private string _location;
         private TimeOnly _startTime;

@@ -15,16 +15,23 @@ using System.Windows.Shapes;
 
 namespace Butter_Mah_Bunz
 {
+    /**************************************************************************************
+    
+                            PLEASE READ templatePageReadMe.txt
+
+     *************************************************************************************/
+
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for PageTemplate.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class PageTemplate : Page
     {
-        public MainWindow()
+        public PageTemplate()
         {
             InitializeComponent();
 
-            MainWindowFrame.NavigationService.Navigate(new SplashPage(MainWindowFrame));
+            //check if schedule is ready
+
         }
     }
 }

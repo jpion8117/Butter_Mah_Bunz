@@ -16,15 +16,20 @@ using System.Windows.Shapes;
 namespace Butter_Mah_Bunz
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for MainPage.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class HomePage : Page
     {
-        public MainWindow()
+        public HomePage()
         {
             InitializeComponent();
 
-            MainWindowFrame.NavigationService.Navigate(new SplashPage(MainWindowFrame));
+            tmrwHours.Text = "8:00am - 3:00pm";
+            tmrwLocation.Text = "69420 [ ]";
+
+            mid2kDisasterFilm_day.Content = "Wednesday";
+            mid2kDisasterFilm_Hours.Text = "8:00am - 3:00pm";
+            mid2kDisasterFilm_Location.Text = "420 I Couldn't Come Up With Anything";
         }
     }
 }
