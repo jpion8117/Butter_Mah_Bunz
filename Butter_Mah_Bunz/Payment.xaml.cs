@@ -29,5 +29,10 @@ namespace Butter_Mah_Bunz
         {
 
         }
+
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
     }
 }
