@@ -52,7 +52,17 @@
             <Label Content="Pickup Time" HorizontalAlignment="Left" Margin="68,468,0,0" VerticalAlignment="Top" Width="101" Height="30"/>
             <ListBox d:ItemsSource="{d:SampleData ItemCount=5}" Margin="169,469,94,111"/>
         </Grid>
-        <Grid Width="414" Margin="0,607,0,100">
+        <Grid Width="414" Margin="0,644,0,0">
+            <TextBox HorizontalAlignment="Left" TextWrapping="Wrap" Text="Order Total:" 
+                     VerticalAlignment="Top" Width="186" Height="38" Background="#EDD4AB"
+                     FontSize="30" Margin="31,0,0,0" FontFamily="Comic Sans MS"/>
+            <Label Content="Label" HorizontalAlignment="Left" Margin="222,-5,0,0" 
+                   VerticalAlignment="Top" RenderTransformOrigin="0.184,-0.231" Height="50" Width="161"
+                   FontSize="30" FontFamily="Comic Sans MS"/>
+            <Button Content="Finish Order" HorizontalAlignment="Center" Margin="0,50,0,0" VerticalAlignment="Top"
+                    Background="#CF3613" BorderBrush="Black" BorderThickness="2px" Height="60" Width="200" />
+            <Button Content="Cancel" HorizontalAlignment="Center" Margin="0,115,0,0" VerticalAlignment="Top"
+                    Height="35" Width="210" Background="#9A5040"/>
         </Grid>
     </Grid>
 </Page>
