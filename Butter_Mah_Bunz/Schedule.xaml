@@ -15,17 +15,85 @@
         <Grid.Background>
             <SolidColorBrush Color="#FFEDD4AB" Opacity="1"/>
         </Grid.Background>
+        
+        <Grid HorizontalAlignment="Stretch" Height="166" VerticalAlignment="Top" Background="#FFD28B17">
+            <Image Margin="10,12,249,12" Source="/Media/BMB.png" Stretch="Fill"/>
+            <TextBlock HorizontalAlignment="Left" Height="30" Margin="170,12,0,0" TextWrapping="Wrap" Text="Location" VerticalAlignment="Top" Width="237" TextAlignment="Center" FontSize="22" FontFamily="/Fonts/#Indie Flower" FontWeight="UltraBold"/>
+            <TextBlock x:Name="headLocation" HorizontalAlignment="Left" Height="30" Margin="170,45,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="237" TextAlignment="Center" FontSize="22" FontFamily="/Fonts/#Indie Flower" FontWeight="UltraBold"/>
+            <TextBlock HorizontalAlignment="Left" Height="30" Margin="170,83,0,0" TextWrapping="Wrap" Text="Hours" VerticalAlignment="Top" Width="237" TextAlignment="Center" FontSize="22" FontFamily="/Fonts/#Indie Flower" FontWeight="UltraBold"/>
+            <TextBlock x:Name="headHours" HorizontalAlignment="Left" Height="30" Margin="170,124,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="237" TextAlignment="Center" FontSize="22" FontFamily="/Fonts/#Indie Flower" FontWeight="UltraBold"/>
+        </Grid>
+        <StackPanel Orientation="Vertical" Margin="15,179,15,0">
+            <StackPanel.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="Margin" Value="0,10,0,0"/>
+                </Style>
+            </StackPanel.Resources>
+            <TextBlock HorizontalAlignment="Center" Text="Full Weekly Schedule" FontSize="24" FontFamily="Roboto" FontWeight="Bold" />
+            <Border BorderBrush="#FF9A5040" Background="#FF9A5040" CornerRadius="26" >
+                <Grid Margin="0,0,0,5">
+                    <TextBlock x:Name="Day0" HorizontalAlignment="Left" Margin="25,10,0,0" TextWrapping="Wrap" Text="Today" VerticalAlignment="Top" FontFamily="Roboto" FontSize="30" Foreground="White"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="25,47,0,0" TextWrapping="Wrap" Text="Hours:&#x9;" VerticalAlignment="Top" FontFamily="Roboto" FontSize="18" Foreground="White" RenderTransformOrigin="0.574,-0.533" FontWeight="Normal"/>
+                    <TextBlock x:Name="Hours0" HorizontalAlignment="Left" Margin="25,0,0,0" TextWrapping="Wrap" VerticalAlignment="Bottom"  FontSize="18" FontFamily="Roboto" Text="10:30-13:00" Foreground="White" FontWeight="Normal"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="203,18,0,0" TextWrapping="Wrap" Text="Address:" VerticalAlignment="Top" FontFamily="Roboto" FontSize="18" Foreground="White"/>
+                    <TextBlock x:Name="Location0" HorizontalAlignment="Left" Margin="203,47,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Roboto" Text="421 S Airport Traverse City MI " FontWeight="Normal" FontSize="18" Foreground="White"/>
+                </Grid>
+            </Border>
+            <Border BorderBrush="#CF3613" Background="#CF3613" CornerRadius="10" >
+                <Grid Margin="0,0,0,5">
+                    <TextBlock x:Name="Day1" HorizontalAlignment="Left" Margin="25,10,0,0" TextWrapping="Wrap" Text="Tomorrow" VerticalAlignment="Top" FontFamily="Roboto" FontSize="30" Foreground="White"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="25,47,0,0" TextWrapping="Wrap" Text="Hours:&#x9;" VerticalAlignment="Top" FontFamily="Roboto" FontSize="18" Foreground="White" RenderTransformOrigin="0.574,-0.533" FontWeight="Normal"/>
+                    <TextBlock x:Name="Hours1" HorizontalAlignment="Left" Margin="25,0,0,0" TextWrapping="Wrap" VerticalAlignment="Bottom"  FontSize="18" FontFamily="Roboto" Text="10:30-13:00" Foreground="White" FontWeight="Normal"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="203,18,0,0" TextWrapping="Wrap" Text="Address:" VerticalAlignment="Top" FontFamily="Roboto" FontSize="18" Foreground="White"/>
+                    <TextBlock x:Name="Location1" HorizontalAlignment="Left" Margin="203,47,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Roboto" Text="421 S Airport Traverse City MI" FontWeight="Normal" FontSize="18" Foreground="White"/>
+                </Grid>
+            </Border>
+            <Border BorderBrush="#CF3613" Background="#CF3613" CornerRadius="10" >
+                <Grid Margin="0,0,0,5">
+                    <TextBlock x:Name="Day2" HorizontalAlignment="Left" Margin="25,10,0,0" TextWrapping="Wrap" Text="Day&#x9;" VerticalAlignment="Top" FontFamily="Roboto" FontSize="30" Foreground="White"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="25,47,0,0" TextWrapping="Wrap" Text="Hours:&#x9;" VerticalAlignment="Top" FontFamily="Roboto" FontSize="18" Foreground="White" RenderTransformOrigin="0.574,-0.533" FontWeight="Normal"/>
+                    <TextBlock x:Name="Hours2" HorizontalAlignment="Left" Margin="25,0,0,0" TextWrapping="Wrap" VerticalAlignment="Bottom"  FontSize="18" FontFamily="Roboto" Text="10:30-13:00" Foreground="White" FontWeight="Normal"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="203,18,0,0" TextWrapping="Wrap" Text="Address:" VerticalAlignment="Top" FontFamily="Roboto" FontSize="18" Foreground="White"/>
+                    <TextBlock x:Name="Location2" HorizontalAlignment="Left" Margin="203,47,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Roboto" Text="421 S Airport Traverse City MI" FontWeight="Normal" FontSize="18" Foreground="White"/>
+                </Grid>
+            </Border>
+            <Border BorderBrush="#CF3613" Background="#CF3613" CornerRadius="10" >
+                <Grid Margin="0,0,0,5">
+                    <TextBlock x:Name="Day3" HorizontalAlignment="Left" Margin="25,10,0,0" TextWrapping="Wrap" Text="Day&#x9;" VerticalAlignment="Top" FontFamily="Roboto" FontSize="30" Foreground="White"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="25,47,0,0" TextWrapping="Wrap" Text="Hours:&#x9;" VerticalAlignment="Top" FontFamily="Roboto" FontSize="18" Foreground="White" RenderTransformOrigin="0.574,-0.533" FontWeight="Normal"/>
+                    <TextBlock x:Name="Hours3" HorizontalAlignment="Left" Margin="25,0,0,0" TextWrapping="Wrap" VerticalAlignment="Bottom"  FontSize="18" FontFamily="Roboto" Text="10:30-13:00" Foreground="White" FontWeight="Normal"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="203,18,0,0" TextWrapping="Wrap" Text="Address:" VerticalAlignment="Top" FontFamily="Roboto" FontSize="18" Foreground="White"/>
+                    <TextBlock x:Name="Location3" HorizontalAlignment="Left" Margin="203,47,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Roboto" Text="421 S Airport Traverse City MI" FontWeight="Normal" FontSize="18" Foreground="White"/>
+                </Grid>
+            </Border>
+            <Border BorderBrush="#CF3613" Background="#CF3613" CornerRadius="10" >
+                <Grid Margin="0,0,0,5">
+                    <TextBlock x:Name="Day4" HorizontalAlignment="Left" Margin="25,10,0,0" TextWrapping="Wrap" Text="Day" VerticalAlignment="Top" FontFamily="Roboto" FontSize="30" Foreground="White"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="25,47,0,0" TextWrapping="Wrap" Text="Hours:&#x9;" VerticalAlignment="Top" FontFamily="Roboto" FontSize="18" Foreground="White" RenderTransformOrigin="0.574,-0.533" FontWeight="Normal"/>
+                    <TextBlock x:Name="Hours4" HorizontalAlignment="Left" Margin="25,0,0,0" TextWrapping="Wrap" VerticalAlignment="Bottom"  FontSize="18" FontFamily="Roboto" Text="10:30-13:00" Foreground="White" FontWeight="Normal"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="203,18,0,0" TextWrapping="Wrap" Text="Address:" VerticalAlignment="Top" FontFamily="Roboto" FontSize="18" Foreground="White"/>
+                    <TextBlock x:Name="Location4" HorizontalAlignment="Left" Margin="203,47,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Roboto" Text="421 S Airport Traverse City MI" FontWeight="Normal" FontSize="18" Foreground="White"/>
+                </Grid>
+            </Border>
+            <Border BorderBrush="#CF3613" Background="#CF3613" CornerRadius="10" >
+                <Grid Margin="0,0,0,5">
+                    <TextBlock x:Name="Day5" HorizontalAlignment="Left" Margin="25,10,0,0" TextWrapping="Wrap" Text="Day" VerticalAlignment="Top" FontFamily="Roboto" FontSize="30" Foreground="White"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="25,47,0,0" TextWrapping="Wrap" Text="Hours:&#x9;" VerticalAlignment="Top" FontFamily="Roboto" FontSize="18" Foreground="White" RenderTransformOrigin="0.574,-0.533" FontWeight="Normal"/>
+                    <TextBlock x:Name="Hours5" HorizontalAlignment="Left" Margin="25,0,0,0" TextWrapping="Wrap" VerticalAlignment="Bottom"  FontSize="18" FontFamily="Roboto" Text="10:30-13:00" Foreground="White" FontWeight="Normal"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="203,18,0,0" TextWrapping="Wrap" Text="Address:" VerticalAlignment="Top" FontFamily="Roboto" FontSize="18" Foreground="White"/>
+                    <TextBlock x:Name="Location5" HorizontalAlignment="Left" Margin="203,47,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Roboto" Text="421 S Airport Traverse City MI" FontWeight="Normal" FontSize="18" Foreground="White"/>
+                </Grid>
+            </Border>
+            <Border BorderBrush="#CF3613" Background="#CF3613" CornerRadius="10" >
+                <Grid Margin="0,0,0,5">
+                    <TextBlock x:Name="Day6" HorizontalAlignment="Left" Margin="25,10,0,0" TextWrapping="Wrap" Text="Day" VerticalAlignment="Top" FontFamily="Roboto" FontSize="30" Foreground="White"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="25,47,0,0" TextWrapping="Wrap" Text="Hours:&#x9;" VerticalAlignment="Top" FontFamily="Roboto" FontSize="18" Foreground="White" RenderTransformOrigin="0.574,-0.533" FontWeight="Normal"/>
+                    <TextBlock x:Name="Hours6" HorizontalAlignment="Left" Margin="25,0,0,0" TextWrapping="Wrap" VerticalAlignment="Bottom"  FontSize="18" FontFamily="Roboto" Text="10:30-13:00" Foreground="White" FontWeight="Normal"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="203,18,0,0" TextWrapping="Wrap" Text="Address:" VerticalAlignment="Top" FontFamily="Roboto" FontSize="18" Foreground="White"/>
+                    <TextBlock x:Name="Location6" HorizontalAlignment="Left" Margin="203,47,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Roboto" Text="421 S Airport Traverse City MI" FontWeight="Normal" FontSize="18" Foreground="White"/>
+                </Grid>
+            </Border>
 
-        <Grid Margin="0,0,0,722" Background="#FFD28B17"/>
-       
-        <StackPanel Orientation="Vertical" Margin="0,179,0,0">
-            <Rectangle Fill="#9a5040" Height="150" Width="auto">
-                <TextBlock x:Name="DayLabel1_Copy" HorizontalAlignment="Left" Height="30" Margin="25,10,0,0" TextWrapping="Wrap" Text="Today" VerticalAlignment="Top" Width="74" FontFamily="Roboto" FontSize="24" Foreground="White"/>
-                <TextBlock x:Name="HoursLabel1_Copy" HorizontalAlignment="Left" Height="30" Margin="25,47,0,0" TextWrapping="Wrap" Text="Hours:&#x9;" VerticalAlignment="Top" Width="74" FontFamily="Roboto" FontSize="24" Foreground="White" RenderTransformOrigin="0.574,-0.533" FontWeight="Normal"/>
-                <TextBox x:Name="hours1_Copy" HorizontalAlignment="Left" Height="26" Margin="25,78,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="162" Background="{x:Null}" BorderBrush="{x:Null}" FontSize="20" FontFamily="Roboto" Text="10:30-13:00" Foreground="White" FontWeight="Normal"/>
-                <TextBlock x:Name="AddressLabel1_Copy" HorizontalAlignment="Left" Height="30" Margin="203,34,0,0" TextWrapping="Wrap" Text="Address:" VerticalAlignment="Top" Width="101" FontFamily="Roboto" FontSize="24" Foreground="White"/>
-                <TextBox x:Name="location1_Copy" HorizontalAlignment="Left" Height="53" Margin="203,64,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="162" Background="{x:Null}" BorderBrush="{x:Null}" FontFamily="Roboto" Text="{Binding name}" FontWeight="Normal" FontSize="20" Foreground="White"/>
-            </Rectangle>
         </StackPanel>
     </Grid>
 </Page>
