@@ -12,7 +12,7 @@ namespace Backend
     internal class Menu
     {
         //settings filepath
-        const string MENU_FILE_PATH = "Menu/menu.xml";
+        const string MENU_FILE_PATH = "Backend/Menu/menu.xml";
         
         private List<Item> _menuItems = new List<Item>();
         private List<Enhancment> _enhancments = new List<Enhancment>();

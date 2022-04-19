@@ -21,13 +21,46 @@ namespace Butter_Mah_Bunz
     /// </summary>
     public partial class SplashPage : Page
     {
-        public SplashPage()
+        public SplashPage(Frame frame)
         {
             InitializeComponent();
+        }
 
+        private void Page_Loaded(object sender, RoutedEventArgs e)
+        {
             Storyboard spinAnimation = (Storyboard)FindResource("SpinFish");
             spinAnimation.RepeatBehavior = RepeatBehavior.Forever;
             spinAnimation.Begin();
+
+            Task task = Task.Run(() =>
+            {
+                DateTime loadStart = DateTime.Now;
+
+                CoreComponents.loadMenu();
+                CoreComponents.loadSchedule();
+
+                DateTime loadEnd = DateTime.Now;
+
+                TimeSpan realLoadTime = loadEnd - loadStart;
+
+                if (realLoadTime.TotalSeconds < 10)
+                {
+                    DateTime artificialLoadStart = DateTime.Now;
+                    TimeSpan artificialLoad = artificialLoadStart - artificialLoadStart; //should = 0
+                    int timeOfAL = new Random().Next(6);
+
+                    while (artificialLoad.TotalSeconds < timeOfAL)
+                    {
+                        //lol
+                        artificialLoad = DateTime.Now - artificialLoadStart;
+                    }
+                }
+
+                this.Dispatcher.Invoke(() =>
+                {
+                    this.NavigationService.Navigate(new HomePage());
+                });
+            });
         }
     }
 }

@@ -32,4 +32,10 @@
     </Resource>
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="Backend\Menu\menu.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>
