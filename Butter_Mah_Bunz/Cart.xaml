@@ -1,0 +1,35 @@
+﻿<Page x:Class="Butter_Mah_Bunz.Cart"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Butter_Mah_Bunz"
+      mc:Ignorable="d" 
+      d:DesignHeight="896" d:DesignWidth="414"
+      Title="Cart" Background="#EDD4AB">
+
+    <Grid>
+        <Grid x:Name="TopPage" Width="414" Height="124" Margin="0,0,0,772" Background="#D28B17" Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Label Grid.Column="1" Grid.ColumnSpan="2" Content="Location" HorizontalAlignment="Left" VerticalContentAlignment="Center"
+                   Margin="69,-9,0,0" VerticalAlignment="Top" Width="138" FontSize="25" FontFamily="Comic Sans MS" Height="43"/>
+            <Label Grid.Column="1" Grid.ColumnSpan="2" Content="Holding Item" HorizontalAlignment="Left" VerticalContentAlignment="Center"
+                   Margin="69,21,0,0" VerticalAlignment="Top" Width="138" FontSize="22" FontFamily="Comic Sans MS" Height="41"/>
+            <Label Grid.Column="1" Grid.ColumnSpan="2" Content="Hours" HorizontalAlignment="Left" VerticalContentAlignment="Center" 
+                   Margin="69,50,0,0" VerticalAlignment="Top" Width="138" FontSize="23" FontFamily="Comic Sans MS"/>
+            <Label Grid.Column="1" Grid.ColumnSpan="2" Content="Holding item" HorizontalAlignment="Left" 
+                   Margin="69,0,0,0" VerticalAlignment="Bottom" Width="138" FontSize="22" FontFamily="Comic Sans MS"/>
+        </Grid>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Height="644" Width="414">
+            <TextBlock ContentElement.TextInput=""></TextBlock>
+        </StackPanel>
+        <Button Content="Continue" HorizontalAlignment="Left" Width="135" Height="40"
+                Margin="50,825,0,0" VerticalAlignment="Top" Background="#CF3613" FontFamily="Comic Sans MC" FontSize="25"/>
+        <Button Content="Cancel" HorizontalAlignment="Left" Width="135" Height="40" 
+                Margin="230,825,0,0" VerticalAlignment="Top" Background="#9A5040" FontFamily="Comic Sans MC" FontSize="25"/>
+    </Grid>
+</Page>
