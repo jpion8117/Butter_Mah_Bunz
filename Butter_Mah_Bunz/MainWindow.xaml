@@ -6,8 +6,5 @@
         xmlns:local="clr-namespace:Butter_Mah_Bunz"
         mc:Ignorable="d"
         Title="MainWindow" Height="896" Width="414" ResizeMode="NoResize">
-    <Grid>
-        <Frame x:Name="MainWindowFrame" Content="Frame"/>
-
-    </Grid>
+    <Frame x:Name="MainWindowFrame" Content="Frame" ScrollViewer.CanContentScroll="True" ScrollViewer.VerticalScrollBarVisibility="Auto" NavigationUIVisibility="Hidden" UseLayoutRounding="True"/>
 </Window>
