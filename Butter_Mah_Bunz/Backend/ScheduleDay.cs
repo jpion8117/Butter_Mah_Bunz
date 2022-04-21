@@ -34,7 +34,6 @@ namespace Backend
             _startTime = start;
             _endTime = end;
         }
-
         private ScheduleDayOfWeek _day;
         private string _location;
         private TimeOnly _startTime;

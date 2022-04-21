@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="896" Width="414" ResizeMode="NoResize">
     <Grid>
-        <Frame x:Name="MainWindowFrame" Content="Frame" NavigationUIVisibility="Hidden" ScrollViewer.VerticalScrollBarVisibility="Hidden"/>
+        <Frame x:Name="MainWindowFrame" Content="Frame"/>
 
     </Grid>
 </Window>
