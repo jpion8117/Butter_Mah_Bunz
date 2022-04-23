@@ -9,11 +9,15 @@
       Title="Payment"
       Background="#EDD4AB">
     <Grid Width="414" >
-        <Grid x:Uid="Header Info" Background="#D28B17" Height="100" VerticalAlignment="Top">
-
+        <Grid HorizontalAlignment="Stretch" Height="166" VerticalAlignment="Top" Background="#FFD28B17">
+            <Image Margin="10,12,249,12" Source="/Media/BMB.png" Stretch="Fill"/>
+            <TextBlock HorizontalAlignment="Left" Height="30" Margin="170,12,0,0" TextWrapping="Wrap" Text="Location" VerticalAlignment="Top" Width="237" TextAlignment="Center" FontSize="22" FontFamily="/Fonts/#Indie Flower" FontWeight="UltraBold"/>
+            <TextBlock x:Name="headLocation" HorizontalAlignment="Left" Height="30" Margin="170,45,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="237" TextAlignment="Center" FontSize="22" FontFamily="/Fonts/#Indie Flower" FontWeight="UltraBold"/>
+            <TextBlock HorizontalAlignment="Left" Height="30" Margin="170,83,0,0" TextWrapping="Wrap" Text="Hours" VerticalAlignment="Top" Width="237" TextAlignment="Center" FontSize="22" FontFamily="/Fonts/#Indie Flower" FontWeight="UltraBold"/>
+            <TextBlock x:Name="headHours" HorizontalAlignment="Left" Height="30" Margin="170,124,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="237" TextAlignment="Center" FontSize="22" FontFamily="/Fonts/#Indie Flower" FontWeight="UltraBold"/>
         </Grid>
         <Grid x:Name="paymentInfo" VerticalAlignment="Center" HorizontalAlignment="Center" Height="600" Margin="0,20,0,0" Width="414">
-            <Button x:Name="Back" Height="30" Width="30" Margin="21,11,0,559" HorizontalAlignment="Left" Background="#D28B17" Content="Back"/>
+            <Button x:Name="Back" Height="30" Width="30" Margin="10,48,0,522" HorizontalAlignment="Left" Background="#D28B17" Content="Back" RenderTransformOrigin="0.279,2.681"/>
             <Label Content="THROW ME YOUR MONEY!" FontSize="25" FontFamily="Comic Sans MS" HorizontalAlignment="Center" Margin="0,41,0,0" VerticalAlignment="Top" />
             <Grid x:Name="paymentInfoEntry" ShowGridLines="True" Width="414" Margin="0,91,0,253">
                 <Grid.RowDefinitions>
