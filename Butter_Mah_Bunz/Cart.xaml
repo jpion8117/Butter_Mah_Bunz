@@ -16,8 +16,7 @@
             <TextBlock HorizontalAlignment="Left" Height="30" Margin="170,83,0,0" TextWrapping="Wrap" Text="Hours" VerticalAlignment="Top" Width="237" TextAlignment="Center" FontSize="22" FontFamily="/Fonts/#Indie Flower" FontWeight="UltraBold"/>
             <TextBlock x:Name="headHours" HorizontalAlignment="Left" Height="30" Margin="170,124,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="237" TextAlignment="Center" FontSize="22" FontFamily="/Fonts/#Indie Flower" FontWeight="UltraBold"/>
         </Grid>
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Height="644" Width="414">
-            <TextBlock ContentElement.TextInput=""></TextBlock>
+        <StackPanel x:Name="OrderDetails" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Height="554" Width="414" CanVerticallyScroll="True" ScrollViewer.CanContentScroll="True" ScrollViewer.VerticalScrollBarVisibility="Auto">
         </StackPanel>
         <Button Content="Continue" HorizontalAlignment="Left" Width="135" Height="40"
                 Margin="50,825,0,0" VerticalAlignment="Top" Background="#CF3613" FontFamily="Comic Sans MC" FontSize="25"/>
