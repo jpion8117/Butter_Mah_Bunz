@@ -38,6 +38,13 @@
     <None Update="Backend\Menu\menu.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="Backend\Schedule\schedule.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Backend\Schedule\" />
   </ItemGroup>
 
 </Project>
