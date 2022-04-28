@@ -1,11 +1,11 @@
-﻿<Page x:Class="Butter_Mah_Bunz.PageTemplate"
+﻿<Page x:Class="Butter_Mah_Bunz.PayConfirm"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Butter_Mah_Bunz"
       mc:Ignorable="d"
-      Title="PageTemplate" Width="414" Height="896">
+      Title="PayConfirm" Width="414" Height="896">
 
     <Grid Width="414" Height="896" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#FFEDD4AB">
         <Grid HorizontalAlignment="Stretch" Height="166" VerticalAlignment="Top" Background="#FFD28B17">
@@ -40,34 +40,33 @@
                        FontSize="26"
                        FontFamily="/Fonts/#Indie Flower"
                        FontWeight="Normal"/>
-            
-                <Expander x:Name="orderDetailsExpander" Height="auto" 
+
+            <Expander x:Name="orderDetailsExpander" Height="auto" 
                           Header="Order Details" 
                           Width="300"
                           HorizontalAlignment="Center"
-                          VerticalAlignment="Top"
                           BorderBrush="#CF3613"
                           BorderThickness="6"  
                           FontFamily="/Fonts/#Indie Flower"
                           FontSize="18"
                           >
 
-                    <TextBlock x:Name="orderDetails" Text="Your Order Details will go here
+                <TextBlock x:Name="orderDetails" Text="Your Order Details will go here
                                Burger______________$XX.xx
                                Other Burger___________$XX.xx
                                Total ____________$XX.xx"
                                TextAlignment="Center"
                                TextWrapping="Wrap"/>
 
-                </Expander>
-            
+            </Expander>
+
             <Button x:Name="homeButton" 
                 Width="126"
-                Margin="0,150,0,0">
+                Margin="0,150,0,0" VerticalAlignment="Center" HorizontalAlignment="Center">
                 <Button.Template>
                     <ControlTemplate>
                         <Canvas Height="142"   Width="142" HorizontalAlignment="Center" VerticalAlignment="Center" >
-                            <Path Fill="#9A5040" Data="M140.773 66.6168L82.2733 14.6168C81.0871 13.5747 79.5622 13 77.9833 13C76.4044 13 74.8795 13.5747 73.6933 14.6168L15.1933 66.6168C14.199 67.4963 13.4979 68.6592 13.1842 69.949C12.8704 71.2389 12.9591 72.5938 13.4383 73.8318C13.9097 75.0534 14.739 76.1041 15.8176 76.8464C16.8963 77.5887 18.174 77.9879 19.4833 77.9918H25.9833V136.492C25.9833 138.216 26.6681 139.869 27.8871 141.088C29.1061 142.307 30.7594 142.992 32.4833 142.992H123.483C125.207 142.992 126.861 142.307 128.08 141.088C129.298 139.869 129.983 138.216 129.983 136.492V77.9918H136.483C137.793 77.9879 139.07 77.5887 140.149 76.8464C141.228 76.1041 142.057 75.0534 142.528 73.8318C143.008 72.5938 143.096 71.2389 142.782 69.949C142.469 68.6592 141.768 67.4963 140.773 66.6168V66.6168ZM84.4833 129.992H71.4833V110.492C71.4833 108.768 72.1681 107.115 73.3871 105.896C74.6061 104.677 76.2594 103.992 77.9833 103.992C79.7072 103.992 81.3605 104.677 82.5795 105.896C83.7985 107.115 84.4833 108.768 84.4833 110.492V129.992ZM116.983 129.992H97.4833V110.492C97.4833 105.32 95.4289 100.36 91.7719 96.7032C88.1149 93.0462 83.155 90.9918 77.9833 90.9918C72.8116 90.9918 67.8517 93.0462 64.1947 96.7032C60.5378 100.36 58.4833 105.32 58.4833 110.492V129.992H38.9833V77.9918H116.983V129.992ZM36.5783 64.9918L77.9833 28.2018L119.388 64.9918H36.5783Z" Canvas.Right="-78.047" Canvas.Left="-0.967"/>
+                            <Path Fill="#9A5040" Data="M140.773 66.6168L82.2733 14.6168C81.0871 13.5747 79.5622 13 77.9833 13C76.4044 13 74.8795 13.5747 73.6933 14.6168L15.1933 66.6168C14.199 67.4963 13.4979 68.6592 13.1842 69.949C12.8704 71.2389 12.9591 72.5938 13.4383 73.8318C13.9097 75.0534 14.739 76.1041 15.8176 76.8464C16.8963 77.5887 18.174 77.9879 19.4833 77.9918H25.9833V136.492C25.9833 138.216 26.6681 139.869 27.8871 141.088C29.1061 142.307 30.7594 142.992 32.4833 142.992H123.483C125.207 142.992 126.861 142.307 128.08 141.088C129.298 139.869 129.983 138.216 129.983 136.492V77.9918H136.483C137.793 77.9879 139.07 77.5887 140.149 76.8464C141.228 76.1041 142.057 75.0534 142.528 73.8318C143.008 72.5938 143.096 71.2389 142.782 69.949C142.469 68.6592 141.768 67.4963 140.773 66.6168V66.6168ZM84.4833 129.992H71.4833V110.492C71.4833 108.768 72.1681 107.115 73.3871 105.896C74.6061 104.677 76.2594 103.992 77.9833 103.992C79.7072 103.992 81.3605 104.677 82.5795 105.896C83.7985 107.115 84.4833 108.768 84.4833 110.492V129.992ZM116.983 129.992H97.4833V110.492C97.4833 105.32 95.4289 100.36 91.7719 96.7032C88.1149 93.0462 83.155 90.9918 77.9833 90.9918C72.8116 90.9918 67.8517 93.0462 64.1947 96.7032C60.5378 100.36 58.4833 105.32 58.4833 110.492V129.992H38.9833V77.9918H116.983V129.992ZM36.5783 64.9918L77.9833 28.2018L119.388 64.9918H36.5783Z" Canvas.Right="-78.047" Canvas.Left="-0.967" HorizontalAlignment="Stretch" VerticalAlignment="Bottom"/>
                         </Canvas>
 
                     </ControlTemplate>
