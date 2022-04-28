@@ -85,5 +85,15 @@ namespace Backend
 
             return 0;
         }
+        public override bool Equals(object? obj)
+        {
+            ScheduleDay? other = obj as ScheduleDay;
+
+            if (other == null)
+                return false;
+
+            return _day==other._day && _endTime==other._endTime 
+                && _startTime==other._startTime && _location==other._location;
+        }
     }
 }

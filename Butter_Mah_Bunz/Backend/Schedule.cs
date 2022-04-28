@@ -50,10 +50,13 @@ namespace Backend
                     }
 
                 }
-                while (_schedule[0] != todaysSchedule)
+                if (_schedule.Count > 0)
                 {
-                    _schedule.Add(_schedule[0]);
-                    _schedule.RemoveAt(0);
+                    while (_schedule[0] != todaysSchedule)
+                    {
+                        _schedule.Add(_schedule[0]);
+                        _schedule.RemoveAt(0);
+                    }
                 }
 
                 //return the now sorted schedule for presentation upstream
@@ -76,7 +79,7 @@ namespace Backend
                 if (_todaysDate == null) //if dateTime wans't set prior to call, TodaysDate returns the current system DateTime
                     return DateTime.Now;
                 else
-                    return (DateTime)_todaysDate; //will return custom set time as "Today"
+                    return (DateTime) _todaysDate; //will return custom set time as "Today"
             }
             set { _todaysDate = value; }
         }
@@ -91,11 +94,15 @@ namespace Backend
         {
             //makes sure scheduleReady id only true IF the schedule is successfully loaded
             _scheduleReady = false;
+            _error = ScheduleError.noErrors;
+
+            //reset the schedule
+            _schedule.Clear();
 
             XmlDocument doc = new XmlDocument();
             try 
             { 
-                doc.LoadXml(path); 
+                doc.Load(path); 
             }
             catch
             {
@@ -182,13 +189,12 @@ namespace Backend
                     }
                 }
 
-                _schedule.Add(new ScheduleDay(dayOfWeek, locationLine1 + "/n" + locationLine2, startTime, endTime));
+                _schedule.Add(new ScheduleDay(dayOfWeek, locationLine1 + "\n" + locationLine2, startTime, endTime));
             }
-
+          
             if (_schedule.Count == 7) _scheduleReady = true; //will return false if schedule didn't load all days correctly.
             else _error = ScheduleError.invalidNumberOfDays;
             
-
             return _scheduleReady;
         }
     }
