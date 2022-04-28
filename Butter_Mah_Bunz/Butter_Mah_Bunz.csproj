@@ -8,6 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="borgar1.jpg" />
     <None Remove="Media\bmb.png" />
     <None Remove="Media\placeholder.png" />
     <None Remove="Media\placeorder.jpg" />
@@ -15,6 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="borgar1.jpg" />
     <Resource Include="Fonts\IndieFlower-Regular.ttf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>

@@ -16,15 +16,18 @@ using System.Windows.Shapes;
 namespace Butter_Mah_Bunz
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for Menu.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class Menu : Page
     {
-        public MainWindow()
+        public Menu()
         {
             InitializeComponent();
 
-            MainWindowFrame.NavigationService.Navigate(new Menu());
+            MenuBox.Items.Add("Triple Bypass Burger");
+            MenuBox.Items.Add("Carb-O-Salt");
+            MenuBox.Items.Add("Vegas Special");
         }
+
     }
 }
