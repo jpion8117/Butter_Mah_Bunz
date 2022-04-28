@@ -87,7 +87,7 @@ namespace Backend
         {
             get { return _scheduleReady; }
         }
-        public bool loadMenu(string path)
+        public bool load(string path)
         {
             //makes sure scheduleReady id only true IF the schedule is successfully loaded
             _scheduleReady = false;
