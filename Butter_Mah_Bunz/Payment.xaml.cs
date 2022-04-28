@@ -18,9 +18,9 @@ namespace Butter_Mah_Bunz
     /// <summary>
     /// Interaction logic for Page1.xaml
     /// </summary>
-    public partial class Page1 : Page
+    public partial class PayConfirm : Page
     {
-        public Page1()
+        public PayConfirm()
         {
             InitializeComponent();
         }
