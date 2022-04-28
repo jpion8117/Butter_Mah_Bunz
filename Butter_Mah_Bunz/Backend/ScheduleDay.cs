@@ -11,7 +11,8 @@ namespace Backend
     /// </summary>
     public enum ScheduleDayOfWeek
     {
-        Today = -2,     //these will get assigned automatically based on the current day of the week
+        ERROR = -3,
+        Today,     //these will get assigned automatically based on the current day of the week
         Tomorrow,       //when the schedule property of Backend.Schedule is requested.
         Sunday,
         Monday,
@@ -58,7 +59,15 @@ namespace Backend
         }
         public string TimesStr
         {
-            get { return _startTime.ToString("t") + " - " + _endTime.ToString("t"); }
+            get 
+            {
+                // returns "closed" if start 
+                if (_startTime == _endTime)
+                {
+                    return "Closed Today";
+                }
+                return _startTime.ToString("t") + " - " + _endTime.ToString("t"); 
+            }
         }
 
         public int CompareTo(ScheduleDay? other)

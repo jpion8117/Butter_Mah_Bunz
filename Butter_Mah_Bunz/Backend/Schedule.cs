@@ -3,12 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml;
 
 namespace Backend
 {
     internal class Schedule
     {
         private List<ScheduleDay> _schedule = new List<ScheduleDay>();
+        private DateTime? _todaysDate = null;
+        private bool _scheduleReady = false;
         /// <summary>
         /// Property returns an ordered array of the week's schedule starting with the schedule for today.
         /// index 0 should always resolve to today's schedule.
@@ -17,11 +20,12 @@ namespace Backend
         {
             get
             {
+
                 //sort the list so the days are in order (just in case)
                 _schedule.Sort();
                 
                 //get DateTime objects representing today and tomorrow
-                DateTime today = DateTime.Now;
+                DateTime today = TodaysDate;
                 DateTime tomorrow = today.AddDays(1);
 
                 //find the days that corrispond to tooday and tomorrow and mark them
@@ -49,12 +53,122 @@ namespace Backend
                 return _schedule.ToArray();
             }
         }
+
         /// <summary>
-        /// set a ScheduleDay to this property to add it to the schedule.
+        /// Primarily used for unit testing the schedule object. Allows unit tests to change the internally recognized "current date"
+        /// to test schedule sorting.
         /// </summary>
-        public ScheduleDay AddDay
+        public DateTime TodaysDate
         {
-            set { _schedule.Add(value); }
+            get
+            {
+                if (_todaysDate == null) //if dateTime wans't set prior to call, TodaysDate returns the current system DateTime
+                    return DateTime.Now;
+                else
+                    return (DateTime)_todaysDate; //will return custom set time as "Today"
+            }
+            set { _todaysDate = value; }
+        }
+        /// <summary>
+        /// Prevents other components of the program from attempting to access the schedule before it's loaded.
+        /// </summary>
+        public bool ScheduleReady
+        {
+            get { return _scheduleReady; }
+        }
+        public bool loadMenu(string path)
+        {
+            //makes sure scheduleReady id only true IF the schedule is successfully loaded
+            _scheduleReady = false;
+
+            XmlDocument doc = new XmlDocument();
+            doc.Load(path);
+
+            XmlNodeList days = doc.GetElementsByTagName("scheduleDay");
+            foreach (XmlNode day in days)
+            {
+                ScheduleDayOfWeek dayOfWeek = ScheduleDayOfWeek.ERROR;
+                TimeOnly startTime;
+                TimeOnly endTime;
+                string locationLine1 = "";
+                string locationLine2 = "";
+
+                XmlNodeList daySettings = day.ChildNodes;
+                foreach (XmlNode setting in daySettings)
+                {
+                    if (setting.Name == "day")
+                    {
+                        switch(setting.InnerText.ToLower())
+                        {
+                            case "sunday":
+                                dayOfWeek = ScheduleDayOfWeek.Sunday;
+                                break;
+                            case "monday":
+                                dayOfWeek = ScheduleDayOfWeek.Monday;
+                                break;
+                            case "tuesday":
+                                dayOfWeek = ScheduleDayOfWeek.Tuesday;
+                                break;
+                            case "wednesday":
+                                dayOfWeek = ScheduleDayOfWeek.Wednesday;
+                                break;
+                            case "thursday":
+                                dayOfWeek = ScheduleDayOfWeek.Thursday;
+                                break;
+                            case "friday":
+                                dayOfWeek = ScheduleDayOfWeek.Friday;
+                                break;
+                            case "saturday":
+                                dayOfWeek = ScheduleDayOfWeek.Saturday;
+                                break;
+                            default:
+                                return false;
+                        }
+                    }
+                    else if (setting.Name == "open")
+                    {
+                        int h = 0;
+                        int m = 0;
+                        foreach (XmlNode timeNode in setting.ChildNodes)
+                        {
+                            if (timeNode.Name == "h")
+                                h = int.Parse(timeNode.InnerText);
+                            else if (timeNode.Name == "m")
+                                m = int.Parse(timeNode.InnerText);
+                        }
+                        startTime = new TimeOnly(h, m);
+                    }
+                    else if (setting.Name == "close")
+                    {
+                        int h = 0;
+                        int m = 0;
+                        foreach (XmlNode timeNode in setting.ChildNodes)
+                        {
+                            if (timeNode.Name == "h")
+                                h = int.Parse(timeNode.InnerText);
+                            else if (timeNode.Name == "m")
+                                m = int.Parse(timeNode.InnerText);
+                        }
+                        endTime = new TimeOnly(h, m);
+                    }
+                    else if (setting.Name == "location")
+                    {
+                        foreach (XmlNode locationNode in setting.ChildNodes)
+                        {
+                            if (locationNode.Name == "line1")
+                                locationLine1 = locationNode.InnerText;
+                            else if (locationNode.Name == "line2")
+                                locationLine2 = locationNode.InnerText;
+                        }
+                    }
+                }
+
+                _schedule.Add(new ScheduleDay(dayOfWeek, locationLine1 + "/n" + locationLine2, startTime, endTime));
+            }
+
+            if (_schedule.Count == 7) _scheduleReady = true; //will return false if schedule didn't load all days correctly.
+
+            return _scheduleReady;
         }
     }
 }
