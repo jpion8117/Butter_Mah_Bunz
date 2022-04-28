@@ -24,7 +24,7 @@ namespace Butter_Mah_Bunz
         {
             InitializeComponent();
 
-            MainWindowFrame.NavigationService.Navigate(new Menu());
+            MainWindowFrame.NavigationService.Navigate(new SplashPage());
         }
     }
 }

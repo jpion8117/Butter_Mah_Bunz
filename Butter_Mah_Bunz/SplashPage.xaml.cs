@@ -21,7 +21,7 @@ namespace Butter_Mah_Bunz
     /// </summary>
     public partial class SplashPage : Page
     {
-        public SplashPage(Frame frame)
+        public SplashPage()
         {
             InitializeComponent();
         }

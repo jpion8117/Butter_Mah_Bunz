@@ -28,7 +28,7 @@ namespace Butter_Mah_Bunz
         /// </summary>
         public static bool ScheduleReady
         {
-            get { return _schedule.ScheduleDays.Length == 7; }
+            get { return _schedule.ScheduleReady; }
         }
 
         /// <summary>
@@ -44,11 +44,12 @@ namespace Butter_Mah_Bunz
         /// </summary>
         public static void loadSchedule()
         {
-
+            _schedule.load("Backend\\Schedule\\schedule.xml");
         }
         public static void loadMenu()
         {
             _menu.LoadMenu();
         }
+
     }
 }

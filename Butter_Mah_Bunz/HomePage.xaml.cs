@@ -24,12 +24,25 @@ namespace Butter_Mah_Bunz
         {
             InitializeComponent();
 
-            tmrwHours.Text = "8:00am - 3:00pm";
-            tmrwLocation.Text = "69420 [ ]";
+            if (CoreComponents.ScheduleReady)
+            {
+                Backend.ScheduleDay[] scheduleDays = CoreComponents.Schedule.ScheduleDays;
+                headLocation.Text = scheduleDays[0].Location;
+                headHours.Text = scheduleDays[0].TimesStr;
 
-            mid2kDisasterFilm_day.Content = "Wednesday";
-            mid2kDisasterFilm_Hours.Text = "8:00am - 3:00pm";
-            mid2kDisasterFilm_Location.Text = "420 I Couldn't Come Up With Anything";
+                tmrwHours.Text = scheduleDays[1].TimesStr;
+                tmrwLocation.Text = scheduleDays[1].Location;
+
+                mid2kDisasterFilm_day.Content = scheduleDays[2].Day.ToString();
+                mid2kDisasterFilm_Hours.Text = scheduleDays[2].TimesStr;
+                mid2kDisasterFilm_Location.Text = scheduleDays[2].Location;
+            }
+
+        }
+
+        private void GoToSchedule(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.Navigate(new SchedulePage());
         }
     }
 }

@@ -125,7 +125,7 @@
         </Grid>
         <TextBlock x:Name="tmrwLocation" HorizontalAlignment="Left" Height="31" Margin="64,622,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="White" FontSize="18" MinWidth="50" FontFamily="/Fonts/#Indie Flower"><Run Text="locarion"/><LineBreak/><Run/></TextBlock>
         <TextBlock x:Name="mid2kDisasterFilm_Location" HorizontalAlignment="Left" Height="32" Margin="64,716,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="White" FontSize="18" MinWidth="50" Text="location" FontFamily="/Fonts/#Indie Flower"/>
-        <Button Style="{DynamicResource ButtonStyle1}" x:Name="showFullSchedule" Content="Show Full Schedule&#xD;&#xA;" HorizontalAlignment="Center" Height="52" Margin="0,780,0,0" VerticalAlignment="Top" Width="320" FontSize="30" VerticalContentAlignment="Center" FontFamily="/Fonts/#Indie Flower" FontWeight="UltraBold" Padding="1,1,1,-46"/>
+        <Button Style="{DynamicResource ButtonStyle1}" x:Name="showFullSchedule" Content="Show Full Schedule&#xD;&#xA;" HorizontalAlignment="Center" Height="52" Margin="0,780,0,0" VerticalAlignment="Top" Width="320" FontSize="30" VerticalContentAlignment="Center" FontFamily="/Fonts/#Indie Flower" FontWeight="UltraBold" Padding="1,1,1,-46" Click="GoToSchedule"/>
 
     </Grid>
 </Page>
