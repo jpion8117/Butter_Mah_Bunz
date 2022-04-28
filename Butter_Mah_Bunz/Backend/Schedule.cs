@@ -7,11 +7,18 @@ using System.Xml;
 
 namespace Backend
 {
+    enum ScheduleError
+    {
+        noErrors,               //schedule working as intended
+        invalidNumberOfDays,    //schedule file failed to load every day
+        scheduleNotFound        //no schedule file was found at given path
+    }
     internal class Schedule
     {
         private List<ScheduleDay> _schedule = new List<ScheduleDay>();
         private DateTime? _todaysDate = null;
         private bool _scheduleReady = false;
+        private ScheduleError _error = ScheduleError.noErrors;
         /// <summary>
         /// Property returns an ordered array of the week's schedule starting with the schedule for today.
         /// index 0 should always resolve to today's schedule.
@@ -53,6 +60,10 @@ namespace Backend
                 return _schedule.ToArray();
             }
         }
+        public ScheduleError Error
+        {
+            get { return _error; }
+        }
 
         /// <summary>
         /// Primarily used for unit testing the schedule object. Allows unit tests to change the internally recognized "current date"
@@ -82,7 +93,15 @@ namespace Backend
             _scheduleReady = false;
 
             XmlDocument doc = new XmlDocument();
-            doc.Load(path);
+            try 
+            { 
+                doc.LoadXml(path); 
+            }
+            catch
+            {
+                _error = ScheduleError.scheduleNotFound;
+                return _scheduleReady;
+            }
 
             XmlNodeList days = doc.GetElementsByTagName("scheduleDay");
             foreach (XmlNode day in days)
@@ -167,6 +186,8 @@ namespace Backend
             }
 
             if (_schedule.Count == 7) _scheduleReady = true; //will return false if schedule didn't load all days correctly.
+            else _error = ScheduleError.invalidNumberOfDays;
+            
 
             return _scheduleReady;
         }
