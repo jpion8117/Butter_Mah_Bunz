@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Butter_Mah_Bunz"
       mc:Ignorable="d" 
-  
+ 
       Title="Menu" Width="414" Height="896">
     <Page.Resources>
         <ControlTemplate x:Key="ListBoxTemplate1" TargetType="{x:Type ListBox}">
