@@ -95,5 +95,9 @@ namespace Backend
             return _day==other._day && _endTime==other._endTime 
                 && _startTime==other._startTime && _location==other._location;
         }
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
+        }
     }
 }

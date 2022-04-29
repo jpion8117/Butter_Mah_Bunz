@@ -1,4 +1,21 @@
-﻿<Page x:Class="Butter_Mah_Bunz.PageTemplate"
+﻿<!-- 
+
+    *********************************************************************************************************************
+    
+                             SSSSSSSS     TTTTTTTTTTT      OOOOOOO       PPPPP
+                            S                  T          O       O      P    P
+                             SSSSSSS           T         O         O     PPPPP
+                                    S          T          O       O      P 
+                            SSSSSSSS           T           OOOOOOO       P
+    
+    Please read the read me file, Do not save a copy of this file directly just use it to copy and paste code snippits.
+    Trying to save a copy makes Visual Studio crap it's pants... lol.
+    
+    *********************************************************************************************************************
+    
+-->
+
+<Page x:Class="Butter_Mah_Bunz.PageTemplate"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 

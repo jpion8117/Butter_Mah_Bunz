@@ -28,7 +28,7 @@
                     Text="Order Complete" 
                     FontSize="48" 
                     FontWeight="UltraBold" 
-                    FontFamily="/Fonts/#Indie Flower"  Margin="0,215,0,611" HorizontalAlignment="Center"  >
+                    FontFamily="/Fonts/#Indie Flower"   ><!--Margin="0,215,0,611" HorizontalAlignment="Center" -->
                     <TextBlock.Effect>
                         <DropShadowEffect
                             ShadowDepth="3"
@@ -43,7 +43,7 @@
                        HorizontalAlignment="Center"
                     FontSize="26"
                     FontFamily="/Fonts/#Indie Flower"
-                    FontWeight="Normal" HorizontalAlignment="Center" Margin="0,285,0,573"/>
+                    FontWeight="Normal" Margin="0,285,0,573"/>
                 <Expander x:Name="orderDetailsExpander" Height="auto" 
                     Header="Order Details" 
                     Width="300"
@@ -53,7 +53,7 @@
                     BorderThickness="6"  
                     FontFamily="/Fonts/#Indie Flower"
                     FontSize="18"
-                    HorizontalAlignment="Center" Margin="0,323,0,533"
+                    Margin="0,323,0,533"
                           >
 
                     <TextBlock x:Name="orderDetails" Text="Your Order Details will go here                                Burger______________$XX.xx                                Other Burger___________$XX.xx                                Total ____________$XX.xx"
