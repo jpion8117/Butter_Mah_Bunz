@@ -68,7 +68,7 @@ namespace Backend
         /// each item's details start at the next index after Item.ITEM_START and end at the index before Item.ITEM_END
         /// this allows more flexability in the size of order detail arrays. All return arrays will follow the same format
         /// with 0 being the index immediatly following Item.ITEM_START
-        ///     0: orderIndexNumber (formated as string)
+        ///     0: uniqueID of this item (not intended to be displayed to user)
         ///     1: represents item name
         ///     2: represents item description
         ///     3: represents URL to the item's image
@@ -84,9 +84,6 @@ namespace Backend
             //itterate through all items in the cart
             for (int i = 0; i < _orderItems.Count; i++)
             {
-                //first string is the order index number
-                details.Add(i.ToString());
-
                 //get the item info from item at index i then extract each output line
                 for (int j = 0; j < _orderItems[i].getItemInfo().Length; j++)
                 {
@@ -98,9 +95,16 @@ namespace Backend
             //return the container as a string
             return details.ToArray();
         }
-        public void removeFromOrder(int index)
+        public void removeFromOrder(string itemUID)
         {
-
+            for (int index = 0; index < _orderItems.Count; index++)
+            {
+                if(_orderItems[index].UniqueID == itemUID)
+                {
+                    _orderItems.RemoveAt(index);
+                    return;
+                }
+            }
         }
     }
 }
