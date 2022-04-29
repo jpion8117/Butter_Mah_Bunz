@@ -10,7 +10,16 @@ namespace Backend
     {
         private static string? _itemStartIndicator;
         private static string? _itemEndIndicator;
+        private static int nextID = 0;
 
+        private static int IDAssigner
+        {
+            get
+            {
+                nextID++; //increment everytime a new item is added
+                return nextID; //gives item objects a uniqueID number
+            }
+        }
         private static string getRandomNoise()
         {
             const int NOISE_AMNT = 1024;
@@ -54,6 +63,7 @@ namespace Backend
             _description = description;
             _imageURL = imageURL;
             _price = price;
+            _uniqueID = "ItemUID_" + Item.IDAssigner.ToString();
         }
         public Item(Item cItem)
         {
@@ -61,13 +71,14 @@ namespace Backend
             _description = cItem._description;
             _price = cItem._price;
             _imageURL=cItem._imageURL;
+            _uniqueID = "ItemUID_" + Item.IDAssigner.ToString();
         }
 
         protected string _name;
         protected string _description;
         protected string _imageURL;
         protected double _price;
-
+        protected string _uniqueID;
         public string Name
         {
             get { return _name; }
@@ -84,19 +95,24 @@ namespace Backend
         {
             get { return _imageURL; }
         }
-        virtual public string[] getItemInfo()
+        public string UniqueID
+        {
+            get { return _uniqueID; }
+        }
+        virtual public string[] getItemInfo(bool closeItem = true)
         {
             //create list to hold return array
             List<string> items = new List<string>();
 
             items.Add(ITEM_START);
 
+            items.Add(_uniqueID);
             items.Add(_name);
             items.Add(_description);
             items.Add(_imageURL);
             items.Add(_price.ToString("C"));
 
-            items.Add(ITEM_END);
+            if (closeItem) items.Add(ITEM_END);
 
             //return array
             return items.ToArray();
