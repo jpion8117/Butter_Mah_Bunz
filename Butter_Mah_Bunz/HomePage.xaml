@@ -86,15 +86,18 @@
             </Setter>
         </Style>
     </Page.Resources>
+    <Page.DataContext>
+        <local:CoreComponents/>
+    </Page.DataContext>
     <ScrollViewer VerticalScrollBarVisibility="Hidden">
         <StackPanel Orientation="Vertical">
         <Grid Width="414" Height="896" Background="#FFEDD4AB">
             <Grid HorizontalAlignment="Stretch" Height="166" VerticalAlignment="Top" Background="#FFD28B17">
                 <Image Margin="10,12,249,12" Source="/Media/BMB.png" Stretch="Fill"/>
                 <TextBlock HorizontalAlignment="Left" Height="30" Margin="170,12,0,0" TextWrapping="Wrap" Text="Location" VerticalAlignment="Top" Width="237" TextAlignment="Center" FontSize="22" FontFamily="/Fonts/#Indie Flower" FontWeight="UltraBold"/>
-                <TextBlock x:Name="headLocation" HorizontalAlignment="Left" Height="30" Margin="170,45,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="237" TextAlignment="Center" FontSize="22" FontFamily="/Fonts/#Indie Flower" FontWeight="UltraBold"/>
-                <TextBlock HorizontalAlignment="Left" Height="30" Margin="170,83,0,0" TextWrapping="Wrap" Text="Hours" VerticalAlignment="Top" Width="237" TextAlignment="Center" FontSize="22" FontFamily="/Fonts/#Indie Flower" FontWeight="UltraBold"/>
-                <TextBlock x:Name="headHours" HorizontalAlignment="Left" Height="30" Margin="170,124,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="237" TextAlignment="Center" FontSize="22" FontFamily="/Fonts/#Indie Flower" FontWeight="UltraBold"/>
+                <TextBlock x:Name="headLocation" HorizontalAlignment="Left" Height="30" Margin="170,45,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="237" TextAlignment="Center" FontSize="22" FontFamily="/Fonts/#Indie Flower" FontWeight="UltraBold" Text="{Binding Schedule[0].Location}"/>
+                    <TextBlock HorizontalAlignment="Left" Height="30" Margin="170,83,0,0" TextWrapping="Wrap" Text="Hours" VerticalAlignment="Top" Width="237" TextAlignment="Center" FontSize="22" FontFamily="/Fonts/#Indie Flower" FontWeight="UltraBold"/>
+                <TextBlock x:Name="headHours" HorizontalAlignment="Left" Height="30" Margin="170,124,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="237" TextAlignment="Center" FontSize="22" FontFamily="/Fonts/#Indie Flower" FontWeight="UltraBold" Text="{Binding Schedule[0].TimesStr}"/>
             </Grid>
                 <Button Template="{DynamicResource ButtonTemplate1}" x:Name="placeOrderBtn" Content="&#xA;Start&#xA;Order&#xA;" HorizontalAlignment="Center" Height="320" Margin="0,186,0,0" VerticalAlignment="Top" Width="320" BorderThickness="10,10,10,10" BorderBrush="#FFCF3613" FontSize="48" FontFamily="/Fonts/#Indie Flower" FontWeight="UltraBold"  Click="GoToMenu">
                 <Button.Resources>
@@ -120,12 +123,12 @@
                 <Rectangle HorizontalAlignment="Center" Height="84" Stroke="Black" VerticalAlignment="Top" Width="320" Margin="0,92,0,0" Fill="#FFCF3615" StrokeThickness="0" RadiusX="20" RadiusY="20"/>
                 <Rectangle HorizontalAlignment="Center" Height="42" Stroke="Black" VerticalAlignment="Top" Width="320" Margin="0,92,0,0" Fill="#FFCF3615" StrokeThickness="0"/>
                 <Label Content="Tomorrow" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,0,0,0" FontSize="22" Height="34" Foreground="White" FontFamily="/Fonts/#Indie Flower"/>
-                <TextBlock x:Name="tmrwHours" HorizontalAlignment="Right" Height="24" Margin="131,10,20,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="White" FontSize="18" FontFamily="/Fonts/#Indie Flower"><Run Text="hours"/><LineBreak/><Run/></TextBlock>
-                <Label x:Name="mid2kDisasterFilm_day" Content="Mid2KDisasterFillm" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,91,0,0" FontSize="22" Height="43" Foreground="White" FontFamily="/Fonts/#Indie Flower"/>
-                <TextBlock x:Name="mid2kDisasterFilm_Hours" HorizontalAlignment="Right" Height="24" Margin="0,99,20,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="White" FontSize="18" FontFamily="/Fonts/#Indie Flower"><Run Text="hours"/><LineBreak/><Run/></TextBlock>
-            </Grid>
-            <TextBlock x:Name="tmrwLocation" HorizontalAlignment="Left" Height="31" Margin="64,622,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="White" FontSize="18" MinWidth="50" FontFamily="/Fonts/#Indie Flower"><Run Text="locarion"/><LineBreak/><Run/></TextBlock>
-            <TextBlock x:Name="mid2kDisasterFilm_Location" HorizontalAlignment="Left" Height="32" Margin="64,716,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="White" FontSize="18" MinWidth="50" Text="location" FontFamily="/Fonts/#Indie Flower"/>
+                    <TextBlock x:Name="tmrwHours" HorizontalAlignment="Right" Height="24" Margin="131,10,20,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="White" FontSize="18" FontFamily="/Fonts/#Indie Flower" Text=""/>
+                    <Label x:Name="mid2kDisasterFilm_day" Content="{Binding Schedule[2].Day}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,91,0,0" FontSize="22" Height="43" Foreground="White" FontFamily="/Fonts/#Indie Flower"/>
+                    <TextBlock x:Name="mid2kDisasterFilm_Hours" HorizontalAlignment="Right" Height="24" Margin="0,99,20,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="White" FontSize="18" FontFamily="/Fonts/#Indie Flower"/>
+                </Grid>
+                <TextBlock x:Name="tmrwLocation" HorizontalAlignment="Left" Height="31" Margin="64,622,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="White" FontSize="18" MinWidth="50" FontFamily="/Fonts/#Indie Flower"/>
+                <TextBlock x:Name="mid2kDisasterFilm_Location" HorizontalAlignment="Left" Height="32" Margin="64,716,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="White" FontSize="18" MinWidth="50" FontFamily="/Fonts/#Indie Flower"/>
             <Button Style="{DynamicResource ButtonStyle1}" x:Name="showFullSchedule" Content="Show Full Schedule&#xA;" HorizontalAlignment="Center" Height="52" Margin="0,780,0,0" VerticalAlignment="Top" Width="320" FontSize="30" VerticalContentAlignment="Center" FontFamily="/Fonts/#Indie Flower" FontWeight="UltraBold" Padding="1,1,1,-46" Click="GoToSchedule"/>
         </Grid>
     </StackPanel>

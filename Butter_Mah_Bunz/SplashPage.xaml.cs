@@ -36,8 +36,7 @@ namespace Butter_Mah_Bunz
             {
                 DateTime loadStart = DateTime.Now;
 
-                CoreComponents.loadMenu();
-                CoreComponents.loadSchedule();
+                CoreComponents.initialize();
 
                 DateTime loadEnd = DateTime.Now;
 

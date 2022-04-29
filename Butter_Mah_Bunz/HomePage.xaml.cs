@@ -26,16 +26,11 @@ namespace Butter_Mah_Bunz
 
             if (CoreComponents.ScheduleReady)
             {
-                Backend.ScheduleDay[] scheduleDays = CoreComponents.Schedule.ScheduleDays;
-                headLocation.Text = scheduleDays[0].Location;
-                headHours.Text = scheduleDays[0].TimesStr;
+                tmrwHours.Text = CoreComponents.Schedule[1].TimesStr;
+                tmrwLocation.Text = CoreComponents.Schedule[1].Location.Replace("\n", " ");
 
-                tmrwHours.Text = scheduleDays[1].TimesStr;
-                tmrwLocation.Text = scheduleDays[1].Location.Replace("\n", " ");
-
-                mid2kDisasterFilm_day.Content = scheduleDays[2].Day.ToString();
-                mid2kDisasterFilm_Hours.Text = scheduleDays[2].TimesStr;
-                mid2kDisasterFilm_Location.Text = scheduleDays[2].Location.Replace("\n", " ");
+                mid2kDisasterFilm_Hours.Text = CoreComponents.Schedule[2].TimesStr;
+                mid2kDisasterFilm_Location.Text = CoreComponents.Schedule[2].Location.Replace("\n", " ");
             }
         }
 

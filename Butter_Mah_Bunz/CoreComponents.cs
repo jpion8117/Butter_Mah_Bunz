@@ -6,50 +6,100 @@ using System.Threading.Tasks;
 
 namespace Butter_Mah_Bunz
 {
-    static class CoreComponents
+    class CoreComponents
     {
-        static private Backend.Schedule _schedule = new Backend.Schedule();
-        static private Backend.Menu _menu = new Backend.Menu();
+        //static private fields
+        static private Backend.Item[] _menuItems = new Backend.Item[0];
+        static private Backend.Enhancment[] _enhancments = new Backend.Enhancment[0];
+        static private Backend.ScheduleDay[] _schedule = new Backend.ScheduleDay[0];
+        static private Backend.Order _cart = new Backend.Order();
+        static private bool _scheduleReady = false;
+        static private bool _menuReady = false;
 
-        /// <summary>
-        /// Access the schedule
-        /// </summary>
-        public static Backend.Schedule Schedule
+        //static public properties
+        static public Backend.Item[] MenuItems
         {
-            get { return _schedule; }
+            get
+            {
+                //load the menu on first access
+                if(!_menuReady)
+                {
+                    Backend.Menu menu = new Backend.Menu();
+                    menu.LoadMenu();
+
+                    _menuItems = menu.MenuItems.ToArray();
+                    _menuReady = menu.MenuReady;
+                }
+                
+                return _menuItems;
+            }
         }
-        public static Backend.Menu Menu
+        static public Backend.Enhancment[] Enhancments
         {
-            get { return _menu; }
+            get
+            {
+                //load the menu on first access
+                if (!_menuReady)
+                {
+                    Backend.Menu menu = new Backend.Menu();
+                    menu.LoadMenu();
+
+                    _enhancments = menu.Enhancments.ToArray();
+                    _menuReady = menu.MenuReady;
+                }
+
+                return _enhancments;
+            }
+        }
+        static public Backend.ScheduleDay[] Schedule
+        {
+            get
+            {
+                if(!_scheduleReady)
+                {
+                    Backend.Schedule schedule = new Backend.Schedule();
+                    schedule.load("Backend\\Schedule\\schedule.xml");
+
+                    _schedule = schedule.ScheduleDays;
+                    _scheduleReady = schedule.ScheduleReady;
+                }
+
+                return _schedule;
+            }
+        }
+        static public bool ScheduleReady
+        {
+            get { return _scheduleReady; }
+        }
+        static public bool MenuReady
+        {
+            get { return _menuReady; }
+        }
+        
+        //static methods
+        static public bool initialize()
+        {
+            if (!_scheduleReady)
+            {
+                Backend.Schedule schedule = new Backend.Schedule();
+                schedule.load("Backend\\Schedule\\schedule.xml");
+
+                _schedule = schedule.ScheduleDays;
+                _scheduleReady = schedule.ScheduleReady;
+            }
+
+            if (!_menuReady)
+            {
+                Backend.Menu menu = new Backend.Menu();
+                menu.LoadMenu();
+
+                _menuItems = menu.MenuItems.ToArray();
+                _menuReady = menu.MenuReady;
+            }
+
+            return _menuReady && _scheduleReady;
         }
 
-        /// <summary>
-        /// State flag indicating the schedule has been loaded and is ready for use
-        /// </summary>
-        public static bool ScheduleReady
-        {
-            get { return _schedule.ScheduleReady; }
-        }
-
-        /// <summary>
-        /// Check if the menu is loaded and ready for use.
-        /// </summary>
-        public static bool MenuReady
-        {
-            get { return _menu.MenuReady; }
-        }
-
-        /// <summary>
-        /// Load the schedule from file.
-        /// </summary>
-        public static void loadSchedule()
-        {
-            _schedule.load("Backend\\Schedule\\schedule.xml");
-        }
-        public static void loadMenu()
-        {
-            _menu.LoadMenu();
-        }
-
+        public CoreComponents() { }
     }
 }

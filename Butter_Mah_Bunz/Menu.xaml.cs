@@ -33,7 +33,7 @@ namespace Butter_Mah_Bunz
 
             if (CoreComponents.MenuReady)
             {
-                List<Backend.Item> menuItems = CoreComponents.Menu.MenuItems;
+                Backend.Item[] menuItems = CoreComponents.MenuItems;
                 foreach (Backend.Item item in menuItems)
                 {
                     System.Windows.Controls.Label label = new System.Windows.Controls.Label();
