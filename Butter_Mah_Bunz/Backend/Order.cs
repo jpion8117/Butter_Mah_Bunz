@@ -20,6 +20,10 @@ namespace Backend
             _total = 0;
         }
 
+        public int Size
+        {
+            get { return _orderItems.Count; }
+        }
         public double Tax
         {
             get { return _tax; }
@@ -64,11 +68,12 @@ namespace Backend
         /// each item's details start at the next index after Item.ITEM_START and end at the index before Item.ITEM_END
         /// this allows more flexability in the size of order detail arrays. All return arrays will follow the same format
         /// with 0 being the index immediatly following Item.ITEM_START
-        ///     0: represents item name
-        ///     1: represents item description
-        ///     2: represents URL to the item's image
-        ///     3: item's total in currency formated string
-        ///     4+: every index after 3 represents one enhacment added to this item until you reach Item.ITEM_END
+        ///     0: orderIndexNumber (formated as string)
+        ///     1: represents item name
+        ///     2: represents item description
+        ///     3: represents URL to the item's image
+        ///     4: item's total in currency formated string
+        ///     5+: every index after 3 represents one enhacment added to this item until you reach Item.ITEM_END
         /// </summary>
         /// <returns>An array of strings contianing the details of an order ready to be formated and presented to the user</returns>
         public string[] getOrderDetails()
@@ -79,6 +84,9 @@ namespace Backend
             //itterate through all items in the cart
             for (int i = 0; i < _orderItems.Count; i++)
             {
+                //first string is the order index number
+                details.Add(i.ToString());
+
                 //get the item info from item at index i then extract each output line
                 for (int j = 0; j < _orderItems[i].getItemInfo().Length; j++)
                 {
@@ -89,6 +97,10 @@ namespace Backend
 
             //return the container as a string
             return details.ToArray();
+        }
+        public void removeFromOrder(int index)
+        {
+
         }
     }
 }
