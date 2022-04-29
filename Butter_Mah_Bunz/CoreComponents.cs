@@ -67,6 +67,34 @@ namespace Butter_Mah_Bunz
                 return _schedule;
             }
         }
+        static public string[][] CartDetails
+        {
+            get
+            {
+                string[] detailsRaw = _cart.getOrderDetails();
+                List<string[]> outter = new List<string[]>();
+
+                for (int i = 0; i < detailsRaw.Length; i++)
+                {
+                    //holds inner array, using list since size is unknown
+                    List<string> inner = new List<string>();
+
+                    if (detailsRaw[i] == Backend.Item.ITEM_START) //Tells organizer where to start
+                    {
+                        ++i; //advances to next item
+                        while (detailsRaw[i] != Backend.Item.ITEM_END) //keeps going until it finds end marker
+                        {
+                            inner.Add(detailsRaw[i]);
+                            ++i; //advances to next item
+                        }
+
+                        outter.Add(inner.ToArray()); //adds inner array to outter array (list)
+                    }
+                }
+
+                return outter.ToArray(); //converts outer to an array and returns it
+            }
+        }
         static public bool ScheduleReady
         {
             get { return _scheduleReady; }
@@ -74,6 +102,10 @@ namespace Butter_Mah_Bunz
         static public bool MenuReady
         {
             get { return _menuReady; }
+        }
+        static public bool CartEmpty
+        {
+            get { return CartDetails.Length == 0; }
         }
         
         //static methods
@@ -99,7 +131,15 @@ namespace Butter_Mah_Bunz
 
             return _menuReady && _scheduleReady;
         }
+        static public void addToCart(Backend.Item newItem)
+        {
+            _cart.addToOrder(newItem);
+        }
+        static public void removeFromCart(int index)
+        {
+            _cart.removeFromOrder(CartDetails[index][0]); //uniqueID is always the first string in each of the inner item arrays
+        }
 
-        public CoreComponents() { }
+        public CoreComponents() {} //instance constructor needed for XAML data binding...
     }
 }
