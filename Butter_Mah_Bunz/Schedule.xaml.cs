@@ -24,5 +24,10 @@ namespace Butter_Mah_Bunz
         {
             InitializeComponent();
         }
+
+        private void GoToHome(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.GoBack();
+        }
     }
 }

@@ -16,15 +16,23 @@ using System.Windows.Shapes;
 namespace Butter_Mah_Bunz
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for Page1.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class PayConfirm : Page
     {
-        public MainWindow()
+        public PayConfirm()
         {
             InitializeComponent();
+        }
 
-            MainWindowFrame.NavigationService.Navigate(new SplashPage());
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
         }
     }
 }

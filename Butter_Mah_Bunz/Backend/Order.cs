@@ -20,6 +20,10 @@ namespace Backend
             _total = 0;
         }
 
+        public int Size
+        {
+            get { return _orderItems.Count; }
+        }
         public double Tax
         {
             get { return _tax; }
@@ -64,11 +68,12 @@ namespace Backend
         /// each item's details start at the next index after Item.ITEM_START and end at the index before Item.ITEM_END
         /// this allows more flexability in the size of order detail arrays. All return arrays will follow the same format
         /// with 0 being the index immediatly following Item.ITEM_START
-        ///     0: represents item name
-        ///     1: represents item description
-        ///     2: represents URL to the item's image
-        ///     3: item's total in currency formated string
-        ///     4+: every index after 3 represents one enhacment added to this item until you reach Item.ITEM_END
+        ///     0: uniqueID of this item (not intended to be displayed to user)
+        ///     1: represents item name
+        ///     2: represents item description
+        ///     3: represents URL to the item's image
+        ///     4: item's total in currency formated string
+        ///     5+: every index after 3 represents one enhacment added to this item until you reach Item.ITEM_END
         /// </summary>
         /// <returns>An array of strings contianing the details of an order ready to be formated and presented to the user</returns>
         public string[] getOrderDetails()
@@ -89,6 +94,17 @@ namespace Backend
 
             //return the container as a string
             return details.ToArray();
+        }
+        public void removeFromOrder(string itemUID)
+        {
+            for (int index = 0; index < _orderItems.Count; index++)
+            {
+                if(_orderItems[index].UniqueID == itemUID)
+                {
+                    _orderItems.RemoveAt(index);
+                    return;
+                }
+            }
         }
     }
 }

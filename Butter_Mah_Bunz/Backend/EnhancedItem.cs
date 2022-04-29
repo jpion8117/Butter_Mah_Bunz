@@ -17,17 +17,12 @@ namespace Backend
         {
             _enhancments.Add(itemEnhancment);
         }
-        override public string[] getItemInfo()
+        override public string[] getItemInfo(bool closeItem = true)
         {
-            //create list to hold return array
-            List<string> items = new List<string>();
+            List<string> items = base.getItemInfo(false).ToList();
+            if (items[items.Count - 1] != Item.ITEM_END)
+                throw new FormatException("Premature end of item detected");
 
-            items.Add(ITEM_START);
-
-            items.Add(_name);
-            items.Add(_description);
-            items.Add(_imageURL);
-            items.Add(_price.ToString("C"));
 
             for (int index = 0; index < _enhancments.Count; index++)
             {

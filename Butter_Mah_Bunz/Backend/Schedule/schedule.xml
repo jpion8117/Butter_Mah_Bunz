@@ -2,74 +2,108 @@
 <schedule>
 	<scheduleDay>
 		<day>Monday</day>
-		<openHour>11</openHour>
-		<openMin>00</openMin>
-		<closeHour>20</closeHour>
-		<closeMin>00</closeMin>
-		<locationStreet>421 S Airport</locationStreet>
-		<locationEnd>Traverse City, MI 49685</locationEnd>
+		<open>
+			<h>11</h>
+			<m>00</m>
+		</open>
+		<close>
+			<h>20</h>
+			<m>00</m>
+		</close>
+		<location>
+			<line1>421 S Airport</line1>
+			<line2>Traverse City, MI 49685</line2>
+		</location>
 	</scheduleDay>
 	<scheduleDay>
 		<day>Tuesday</day>
-		<openHour>11</openHour>
-		<openMin>00</openMin>
-		<closeHour>20</closeHour>
-		<closeMin>00</closeMin>
-		<locationStreet>421 S Airport</locationStreet>
-		<locationEnd>Traverse City, MI 49685</locationEnd>		
+		<open>
+			<h>11</h>
+			<m>00</m>
+		</open>
+		<close>
+			<h>20</h>
+			<m>00</m>
+		</close>
+		<location>
+			<line1>421 S Airport</line1>
+			<line2>Traverse City, MI 49685</line2>
+		</location>
 	</scheduleDay>
 	<scheduleDay>
 		<day>Wednesday</day>
-		<openHour>11</openHour>
-		<openMin>00</openMin>
-		<closeHour>20</closeHour>
-		<closeMin>00</closeMin>
-		<locationStreet>421 S Airport</locationStreet>
-		<locationEnd>Traverse City, MI 49685</locationEnd>
+		<open>
+			<h>11</h>
+			<m>00</m>
+		</open>
+		<close>
+			<h>20</h>
+			<m>00</m>
+		</close>
+		<location>
+			<line1>421 S Airport</line1>
+			<line2>Traverse City, MI 49685</line2>
+		</location>
 	</scheduleDay>
 	<scheduleDay>
 		<day>Thursday</day>
-		<openHour>11</openHour>
-		<openMin>00</openMin>
-		<closeHour>20</closeHour>
-		<closeMin>00</closeMin>
-		<locationStreet>421 S Airport</locationStreet>
-		<locationEnd>Traverse City, MI 49685</locationEnd>
-	</scheduleDay>
-	<scheduleDay>
-		<day>Friday</day>
-		<openHour>11</openHour>
-		<openMin>00</openMin>
-		<closeHour>20</closeHour>
-		<closeMin>00</closeMin>
-		<locationStreet>421 S Airport</locationStreet>
-		<locationEnd>Traverse City, MI 49685</locationEnd>
+		<open>
+			<h>11</h>
+			<m>00</m>
+		</open>
+		<close>
+			<h>20</h>
+			<m>00</m>
+		</close>
+		<location>
+			<line1>421 S Airport</line1>
+			<line2>Traverse City, MI 49685</line2>
+		</location>
 	</scheduleDay>
 	<scheduleDay>
 		<day>Saturday</day>
-		<openHour>11</openHour>
-		<openMin>00</openMin>
-		<closeHour>20</closeHour>
-		<closeMin>00</closeMin>
-		<locationStreet>421 S Airport</locationStreet>
-		<locationEnd>Traverse City, MI 49685</locationEnd>
+		<open>
+			<h>9</h>
+			<m>00</m>
+		</open>
+		<close>
+			<h>16</h>
+			<m>00</m>
+		</close>
+		<location>
+			<line1>5629 US31 S</line1>
+			<line2>Traverse City, MI 49685</line2>
+		</location>
+	</scheduleDay>
+	<scheduleDay>
+		<day>Friday</day>
+		<open>
+			<h>9</h>
+			<m>00</m>
+		</open>
+		<close>
+			<h>16</h>
+			<m>00</m>
+		</close>
+		<location>
+			<line1>5629 US31 S</line1>
+			<line2>Traverse City, MI 49685</line2>
+		</location>
 	</scheduleDay>
 	<scheduleDay>
 		<day>Sunday</day>
-		<openHour>11</openHour>
-		<openMin>00</openMin>
-		<closeHour>20</closeHour>
-		<closeMin>00</closeMin>
-		<locationStreet>421 S Airport</locationStreet>
-		<locationEnd>Traverse City, MI 49685</locationEnd>
+		<open>
+			<h>00</h>
+			<m>00</m>
+		</open>
+		<close>
+			<h>00</h>
+			<m>00</m>
+		</close>
+		<location>
+			<line1></line1>
+			<line2></line2>
+		</location>
 	</scheduleDay>
-	<scheduleDay>
-		<day>Closed</day>
-		<openHour>Closed</openHour>
-		<openMin>Closed</openMin>
-		<closeHour>Closed</closeHour>
-		<closeMin>Closed</closeMin>
-		<locationStreet>Closed</locationStreet>
-		<locationEnd>Closed</locationEnd>
-	</scheduleDay>
-</schedule>	
+</schedule>
+
