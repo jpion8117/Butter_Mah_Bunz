@@ -27,7 +27,7 @@ namespace Butter_Mah_Bunz
 
         private void GoToHome(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.Navigate(new HomePage());
+            this.NavigationService.GoBack();
         }
     }
 }
