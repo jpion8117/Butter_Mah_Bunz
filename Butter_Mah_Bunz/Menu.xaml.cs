@@ -67,5 +67,18 @@ namespace Butter_Mah_Bunz
                 }
             }
         }
+
+        private void GoBack(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.GoBack();
+        }
+
+        private void ToCart(object sender, RoutedEventArgs e)
+        {
+            if (!CoreComponents.CartEmpty)
+                this.NavigationService.Navigate(new Cart());
+            else
+                System.Windows.MessageBox.Show("Thy buns remain barren (Cart is empty).", "Cart Empty");
+        }
     }
 }
