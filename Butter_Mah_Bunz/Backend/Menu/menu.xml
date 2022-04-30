@@ -2,40 +2,40 @@
 <main>
 	<menuItems>
 		<item>
+			<name>Bacon Blaster</name>
+			<description>This blast satisfies the soul with an orgasmic amount of bacon wonder</description>
+			<price>17.69</price>
+			<imageURL>Media/baconBlaster.jpg</imageURL>
+		</item>
+		<item>
 			<name>Eggscellent Burger</name>
 			<description>An eggecellent eggcuse to enjoy egg</description>
 			<price>13.69</price>
-			<imageURL>Images/eggBurg.jpg</imageURL>
+			<imageURL>../../Media/eggBurg.jpg</imageURL>
 		</item>
 		<item>
 			<name>Club</name>
 			<description>Boggie with this classic</description>
 			<price>10.69</price>
-			<imageURL>Images/partyClub.jpg</imageURL>
+			<imageURL>../../Media/partyClub.jpg</imageURL>
 		</item>
 		<item>
 			<name>Sloppy Joe</name>
 			<description>Feel free to ask for seconds of this sloppy situation</description>
 			<price>10.50</price>
-			<imageURL>Images/sloppy.jpg</imageURL>
+			<imageURL>../../Media/sloppy.jpg</imageURL>
 		</item>
 		<item>
 			<name>Grilled cheese</name>
 			<description>From a simpler time for a simple place</description>
 			<price>9.69</price>
-			<imageURL>Images/overlyCheesy.jpg</imageURL>
-		</item>
-		<item>
-			<name>Bacon Blaster</name>
-			<description>This blast satisfies the soul with an orgasmic amount of bacon wonder</description>
-			<price>17.69</price>
-			<imageURL>Images/baconHeaven.jpg</imageURL>
+			<imageURL>../../Media/overlyCheesy.jpg</imageURL>
 		</item>
 		<item>
 			<name>Triple Bypass</name>
 			<description>Quickest way to get the chance to say "HELLO NURSE"</description>
 			<price>20.69</price>
-			<imageURL>Images/helloNurse.jpg</imageURL>
+			<imageURL>../../Media/helloNurse.jpg</imageURL>
 		</item>
 	</menuItems>
 	<enhancmentItems>

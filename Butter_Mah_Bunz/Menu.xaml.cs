@@ -37,7 +37,7 @@ namespace Butter_Mah_Bunz
                 foreach (Backend.Item item in menuItems)
                 {
                     System.Windows.Controls.Label label = new System.Windows.Controls.Label();
-                    //System.Windows.Controls.Image img = new System.Windows.Controls.Image();
+                    System.Windows.Controls.Image img = new System.Windows.Controls.Image();
                     System.Windows.Controls.TextBlock description = new System.Windows.Controls.TextBlock();
                     System.Windows.Controls.TextBlock price = new System.Windows.Controls.TextBlock();
                     System.Windows.Controls.ListBox listbox = new System.Windows.Controls.ListBox();
@@ -46,12 +46,20 @@ namespace Butter_Mah_Bunz
                     label.Content = item.Name;
                     label.HorizontalAlignment = System.Windows.HorizontalAlignment.Center;
                     label.Width = 414;
-                    //img. = ;
-                    //img.Width = 400;
-                    //img.HorizontalAlignment = System.Windows.HorizontalAlignment.Center;
+                    try
+                    {
+                        img.Source = new BitmapImage(new Uri("pack://application:,,,/Butter_Mah_Bunz;component/"+item.ImageURL));
+                    }
+                    catch
+                    {
+                        img.Source = new BitmapImage(new Uri("pack://application:,,,/Butter_Mah_Bunz;component/Media/bmb.png"));
+                    }
+                    img.Width = 150;
+                    img.HorizontalAlignment = System.Windows.HorizontalAlignment.Center;
                     description.Text = item.Description;
                     price.Text = item.Price.ToString();
                     listbox.Items.Add(label);
+                    listbox.Items.Add(img);
                     listbox.Items.Add(description);
                     listbox.Items.Add(price);
 

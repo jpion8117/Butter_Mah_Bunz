@@ -10,14 +10,34 @@
   <ItemGroup>
     <None Remove="borgar1.jpg" />
     <None Remove="Media\bmb.png" />
+    <None Remove="Media\eggBurg.png" />
+    <None Remove="Media\helloNurse.png" />
+    <None Remove="Media\overlyCheesy.png" />
+    <None Remove="Media\partyClub.png" />
     <None Remove="Media\placeholder.png" />
     <None Remove="Media\placeorder.jpg" />
+    <None Remove="Media\sloppy.png" />
     <None Remove="Media\splashBack.jpg" />
   </ItemGroup>
 
   <ItemGroup>
     <Resource Include="borgar1.jpg" />
     <Resource Include="Fonts\IndieFlower-Regular.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Media\helloNurse.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Media\overlyCheesy.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Media\sloppy.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Media\partyClub.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Media\eggBurg.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Media\bmb.png">
