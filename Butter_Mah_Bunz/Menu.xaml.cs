@@ -48,7 +48,9 @@ namespace Butter_Mah_Bunz
                     label.Width = 414;
                     try
                     {
-                        img.Source = new BitmapImage(new Uri("pack://application:,,,/Butter_Mah_Bunz;component/"+item.ImageURL));
+                        string url = "pack://application:,,,/Butter_Mah_Bunz;component/" + item.ImageURL;
+                        Uri uri = new Uri(url);
+                        img.Source = new BitmapImage(uri);
                     }
                     catch
                     {
