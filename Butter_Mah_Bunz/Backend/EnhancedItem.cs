@@ -17,6 +17,10 @@ namespace Backend
         {
             _enhancments.Add(itemEnhancment);
         }
+        public void removeEnhancment(Enhancment itemEnhancment)
+        {
+            _enhancments.Remove(itemEnhancment);
+        }
         override public string[] getItemInfo(bool closeItem = true)
         {
             List<string> items = base.getItemInfo(false).ToList();
