@@ -7,13 +7,13 @@ using System.Xml;
 
 namespace Backend
 {
-    enum ScheduleError
+    public enum ScheduleError
     {
         noErrors,               //schedule working as intended
         invalidNumberOfDays,    //schedule file failed to load every day
         scheduleNotFound        //no schedule file was found at given path
     }
-    internal class Schedule
+    public class Schedule
     {
         private List<ScheduleDay> _schedule = new List<ScheduleDay>();
         private DateTime? _todaysDate = null;

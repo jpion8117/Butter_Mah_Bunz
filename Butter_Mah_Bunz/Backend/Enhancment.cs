@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Backend
 {
-    internal class Enhancment
+    public class Enhancment
     {
         public Enhancment(string name, double price)
         {

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Backend
 {
-    internal class EnhancedItem : Item
+    public class EnhancedItem : Item
     {
         public EnhancedItem(string name, string description, double price, string imageURL = "") : base(name, description, price, imageURL) {}
         public EnhancedItem(Item baseItem) : base(baseItem) {}

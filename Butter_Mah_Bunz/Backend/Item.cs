@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Backend
 {
-    internal class Item
+    public class Item
     {
         private static string? _itemStartIndicator;
         private static string? _itemEndIndicator;

@@ -26,7 +26,7 @@ namespace Backend
     /// Part of how the overall schedule component functions. This represents one day in the whole of the 
     /// schedule.
     /// </summary>
-    internal class ScheduleDay : IComparable<ScheduleDay>
+    public class ScheduleDay : IComparable<ScheduleDay>
     {
         public ScheduleDay(ScheduleDayOfWeek day, string location, TimeOnly start, TimeOnly end)
         {
