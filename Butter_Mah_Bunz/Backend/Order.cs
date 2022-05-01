@@ -73,7 +73,7 @@ namespace Backend
         ///     2: represents item description
         ///     3: represents URL to the item's image
         ///     4: item's total in currency formated string
-        ///     5+: every index after 3 represents one enhacment added to this item until you reach Item.ITEM_END
+        ///     5+: every index after 4 represents one enhacment added to this item until you reach Item.ITEM_END
         /// </summary>
         /// <returns>An array of strings contianing the details of an order ready to be formated and presented to the user</returns>
         public string[] getOrderDetails()

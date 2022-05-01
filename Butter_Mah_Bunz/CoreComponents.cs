@@ -30,7 +30,6 @@ namespace Butter_Mah_Bunz
                     _menuItems = menu.MenuItems.ToArray();
                     _menuReady = menu.MenuReady;
                 }
-                
                 return _menuItems;
             }
         }
