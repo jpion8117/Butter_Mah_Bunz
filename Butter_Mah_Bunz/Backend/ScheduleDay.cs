@@ -47,7 +47,14 @@ namespace Backend
         }
         public string Location
         {
-            get { return _location; }
+            get 
+            { 
+                if (_startTime == _endTime)
+                {
+                    return "Closed";
+                }
+                return _location; 
+            }
         }
         public TimeOnly StartTime
         {
@@ -64,7 +71,7 @@ namespace Backend
                 // returns "closed" if start 
                 if (_startTime == _endTime)
                 {
-                    return "Closed Today";
+                    return "Closed";
                 }
                 return _startTime.ToString("t") + " - " + _endTime.ToString("t"); 
             }
