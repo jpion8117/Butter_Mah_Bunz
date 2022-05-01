@@ -17,25 +17,25 @@
 			<name>Club</name>
 			<description>Boggie with this classic</description>
 			<price>10.69</price>
-			<imageURL>../../Media/partyClub.jpg</imageURL>
+			<imageURL>../../Media/partyClub.png</imageURL>
 		</item>
 		<item>
 			<name>Sloppy Joe</name>
 			<description>Feel free to ask for seconds of this sloppy situation</description>
 			<price>10.50</price>
-			<imageURL>../../Media/sloppy.jpg</imageURL>
+			<imageURL>../../Media/sloppy.png</imageURL>
 		</item>
 		<item>
 			<name>Grilled cheese</name>
 			<description>From a simpler time for a simple place</description>
 			<price>9.69</price>
-			<imageURL>../../Media/overlyCheesy.jpg</imageURL>
+			<imageURL>../../Media/overlyCheesy.png</imageURL>
 		</item>
 		<item>
 			<name>Triple Bypass</name>
 			<description>Quickest way to get the chance to say "HELLO NURSE"</description>
 			<price>20.69</price>
-			<imageURL>../../Media/helloNurse.jpg</imageURL>
+			<imageURL>../../Media/helloNurse.png</imageURL>
 		</item>
 	</menuItems>
 	<enhancmentItems>
