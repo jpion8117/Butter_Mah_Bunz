@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <main>
 	<menuItems>
+		<!--Char count for description splicing is 40 chars.-->
 		<item>
 			<name>Bacon Blaster</name>
 			<!--<description>This blast satisfies the soul with an orgasmic amount of bacon wonder</description>-->
