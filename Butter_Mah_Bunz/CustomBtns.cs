@@ -124,4 +124,12 @@ namespace Butter_Mah_Bunz
             _pageRef.CartCount.Text = CoreComponents.CartCount.ToString();
         }
     }
+
+    class EnhancmentButton : BMB_Button
+    {
+        private Backend.Enhancment _enhancment;
+        private Backend.EnhancedItem _item;
+
+        public Backend.EnhancedItem Item
+    }
 }
