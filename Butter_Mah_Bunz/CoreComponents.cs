@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Windows.Media;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.ComponentModel;
 
 namespace Butter_Mah_Bunz
 {
@@ -15,6 +17,7 @@ namespace Butter_Mah_Bunz
         static private Backend.Order _cart = new Backend.Order();
         static private bool _scheduleReady = false;
         static private bool _menuReady = false;
+
 
         //static public properties
         static public Backend.Item[] MenuItems
@@ -94,6 +97,22 @@ namespace Butter_Mah_Bunz
                 return outter.ToArray(); //converts outer to an array and returns it
             }
         }
+        static public Color Ketchup
+        {
+            get { return Color.FromRgb(207, 54, 19); }
+        }
+        static public Color Beef
+        {
+            get { return Color.FromRgb(154, 80, 64); }
+        }
+        static public Color Bun
+        {
+            get { return Color.FromRgb(210, 139, 23); }
+        }
+        static public Color Mayo
+        {
+            get { return Color.FromRgb(237, 212, 171); }
+        }
         static public bool ScheduleReady
         {
             get { return _scheduleReady; }
@@ -105,6 +124,10 @@ namespace Butter_Mah_Bunz
         static public bool CartEmpty
         {
             get { return CartDetails.Length == 0; }
+        }
+        static public int CartCount
+        {
+            get { return CartDetails.Length; }
         }
         
         //static methods
@@ -150,6 +173,7 @@ namespace Butter_Mah_Bunz
         {
             _cart.removeFromOrder(CartDetails[index][0]); //uniqueID is always the first string in each of the inner item arrays
         }
+        
 
         public CoreComponents() {} //instance constructor needed for XAML data binding...
     }
