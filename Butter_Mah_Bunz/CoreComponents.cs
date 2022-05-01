@@ -130,6 +130,18 @@ namespace Butter_Mah_Bunz
 
             return _menuReady && _scheduleReady;
         }
+        static public Backend.Item? locateMenuItem(string itemName)
+        {
+            Backend.Item? item = null;
+
+            foreach (Backend.Item menuItem in _menuItems)
+            {
+                if (menuItem.Name == itemName)
+                    item = menuItem;
+            }
+
+            return item;
+        }
         static public void addToCart(Backend.Item newItem)
         {
             _cart.addToOrder(newItem);

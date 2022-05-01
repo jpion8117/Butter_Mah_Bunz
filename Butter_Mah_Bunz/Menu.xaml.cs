@@ -34,18 +34,20 @@ namespace Butter_Mah_Bunz
             if (CoreComponents.MenuReady)
             {
                 Backend.Item[] menuItems = CoreComponents.MenuItems;
-                foreach (Backend.Item item in menuItems)
+                for (int index = 0; index < menuItems.Length; index++)
                 {
+                    Backend.Item item = menuItems[index];
                     System.Windows.Controls.Label label = new System.Windows.Controls.Label();
                     System.Windows.Controls.Image img = new System.Windows.Controls.Image();
                     System.Windows.Controls.TextBlock description = new System.Windows.Controls.TextBlock();
                     System.Windows.Controls.TextBlock price = new System.Windows.Controls.TextBlock();
-                    System.Windows.Controls.ListBox listbox = new System.Windows.Controls.ListBox();
+                    System.Windows.Controls.StackPanel superStacker9000 = new System.Windows.Controls.StackPanel();
+                    System.Windows.Controls.Button fItButton = new System.Windows.Controls.Button();
 
-                    listbox.MinWidth = 414;
+                    superStacker9000.MinWidth = 414;
                     label.Content = item.Name;
-                    label.HorizontalAlignment = System.Windows.HorizontalAlignment.Center;
                     label.Width = 414;
+                    label.HorizontalContentAlignment = System.Windows.HorizontalAlignment.Center;
                     try
                     {
                         string url = "pack://application:,,,/Butter_Mah_Bunz;component/" + item.ImageURL;
@@ -59,15 +61,29 @@ namespace Butter_Mah_Bunz
                     img.Width = 150;
                     description.Text = item.Description;
                     price.Text = item.Price.ToString();
-                    listbox.HorizontalAlignment = System.Windows.HorizontalAlignment.Center;
-                    listbox.Items.Add(label);
-                    listbox.Items.Add(img);
-                    listbox.Items.Add(description);
-                    listbox.Items.Add(price);
+                    superStacker9000.Children.Add(label);
+                    superStacker9000.Children.Add(img);
+                    superStacker9000.Children.Add(description);
+                    superStacker9000.Children.Add(price);
 
-                    MenuBox.Items.Add(listbox);
+                    fItButton.Content = superStacker9000;
+                    fItButton.Click += MenuItemClicked;
+
+                    MenuBox.Items.Add(fItButton);
                 }
             }
+        }
+
+        private void MenuItemClicked(object sender, RoutedEventArgs e)
+        {
+            Button button = (Button)sender;
+            StackPanel panel = (StackPanel)button.Content;
+
+            //janky AF, but F*** it!
+            Label label = (Label)panel.Children[0];
+            string str = (string)label.Content;
+            Backend.Item? item = CoreComponents.locateMenuItem(str);
+            bool dumDum = true;
         }
 
         private void GoBack(object sender, RoutedEventArgs e)
