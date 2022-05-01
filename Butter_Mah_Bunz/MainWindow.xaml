@@ -5,9 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Butter_Mah_Bunz"
         mc:Ignorable="d"
-        Title="MainWindow" Height="896" Width="428" ResizeMode="NoResize">
+        Title="MainWindow" Height="896" Width="428" ResizeMode="NoResize" Visibility="Visible">
     <Grid>
-        <Frame x:Name="MainWindowFrame" Content="Frame"/>
+        <Frame x:Name="MainWindowFrame" Content="Frame" NavigationUIVisibility="Hidden"/>
 
     </Grid>
 </Window>
