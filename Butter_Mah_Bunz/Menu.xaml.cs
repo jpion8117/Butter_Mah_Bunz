@@ -47,6 +47,7 @@ namespace Butter_Mah_Bunz
                     superStacker9000.MinWidth = 414;
                     label.Content = item.Name;
                     label.Width = 414;
+                    label.FontSize = 30;
                     label.HorizontalContentAlignment = System.Windows.HorizontalAlignment.Center;
                     try
                     {
@@ -60,16 +61,21 @@ namespace Butter_Mah_Bunz
                     }
                     img.Width = 150;
                     description.Text = item.Description;
-                    price.Text = item.Price.ToString();
+                    price.Text = item.Price.ToString("C");
                     superStacker9000.Children.Add(label);
                     superStacker9000.Children.Add(img);
                     superStacker9000.Children.Add(description);
                     superStacker9000.Children.Add(price);
 
                     fItButton.Content = superStacker9000;
+                    fItButton.Margin = new System.Windows.Thickness(0, 0, 0, 15);
                     fItButton.Click += MenuItemClicked;
-
-                    MenuBox.Items.Add(fItButton);
+                    if (index % 2 == 0)
+                        fItButton.Background = new SolidColorBrush(CoreComponents.Ketchup);
+                    else
+                        fItButton.Background = new SolidColorBrush(CoreComponents.Beef);
+                    MenuBox.Height += fItButton.ActualHeight;
+                    MenuBox.Children.Add(fItButton);
                 }
             }
         }
@@ -82,8 +88,11 @@ namespace Butter_Mah_Bunz
             //janky AF, but F*** it!
             Label label = (Label)panel.Children[0];
             string str = (string)label.Content;
-            Backend.Item? item = CoreComponents.locateMenuItem(str);
-            bool dumDum = true;
+
+            //update cart total.
+            CartCount.Text = CoreComponents.CartCount.ToString();
+
+            this.NavigationService.Navigate(new ItemDetailPage(str));
         }
 
         private void GoBack(object sender, RoutedEventArgs e)
