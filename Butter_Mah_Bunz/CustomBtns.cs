@@ -5,11 +5,52 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Media;
 using System.Windows.Media.Imaging;
 
 namespace Butter_Mah_Bunz
 {
-    class ItemDetailsButton : Button
+    abstract class BMB_Button : Button
+    {
+        private SolidColorBrush _primaryBackground;
+        private SolidColorBrush _secondaryBackground;
+
+        public BMB_Button(SolidColorBrush? primaryColor = null, SolidColorBrush? secondaryColor = null)
+        {
+            if(primaryColor == null)
+                _primaryBackground = new SolidColorBrush(CoreComponents.Ketchup);
+            else
+                _primaryBackground = primaryColor;
+
+            if (secondaryColor == null)
+                _secondaryBackground = new SolidColorBrush(CoreComponents.Bun);
+            else
+                _secondaryBackground = secondaryColor;
+
+            //MouseEnter += toggleBackground;
+            //MouseLeave += toggleBackground;
+        }
+
+        public SolidColorBrush PrimaryColor
+        {
+            get { return _primaryBackground; }
+            set { _primaryBackground = value; }
+        }
+        public SolidColorBrush SecondaryColor
+        {
+            get { return _secondaryBackground; }
+            set { _secondaryBackground = value; } 
+        }
+
+        public virtual void toggleBackground(object sender, RoutedEventArgs e)
+        {
+            if(Background == _primaryBackground)
+                Background = _secondaryBackground;
+            else
+                Background = _primaryBackground;
+        }
+    }
+    class ItemDetailsButton : BMB_Button
     {
         private Backend.Item _item;
         public Backend.Item Item
@@ -61,7 +102,7 @@ namespace Butter_Mah_Bunz
             this.Margin = new System.Windows.Thickness(0, 15, 0, 0);
         }
     }
-    class AddToCartButton : Button
+    class AddToCartButton : BMB_Button
     {
         private Menu _pageRef;
         private Backend.Item _item;

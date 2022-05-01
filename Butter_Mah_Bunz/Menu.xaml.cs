@@ -68,7 +68,7 @@ namespace Butter_Mah_Bunz
             if (!CoreComponents.CartEmpty)
                 this.NavigationService.Navigate(new Cart());
             else
-                System.Windows.MessageBox.Show("Thy buns remain barren (Cart is empty).", "Cart Empty");
+                System.Windows.MessageBox.Show("Thy buns remain barren.", "Cart Empty");
         }
     }
 }
