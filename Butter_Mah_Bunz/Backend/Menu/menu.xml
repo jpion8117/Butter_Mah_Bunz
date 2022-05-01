@@ -3,37 +3,53 @@
 	<menuItems>
 		<item>
 			<name>Bacon Blaster</name>
-			<description>This blast satisfies the soul with an orgasmic amount of bacon wonder</description>
+			<!--<description>This blast satisfies the soul with an orgasmic amount of bacon wonder</description>-->
+			<description>This sandwich is loaded with so much bacon that we might run 
+			out of pigs! Bacon and ham layered on top of tomato and lettuce with a touch of mayo
+			will immediately become a family favorite. </description>
 			<price>17.69</price>
 			<imageURL>Media/baconBlaster.jpg</imageURL>
 		</item>
 		<item>
 			<name>Eggscellent Burger</name>
-			<description>An eggecellent eggcuse to enjoy egg</description>
+			<!--<description>An eggecellent eggcuse to enjoy egg</description>-->
+			<description>An eggscellent eggscuse to enjoy egg! A fried egg on top of our signature 
+			beef brings it all home, topped with hash browns and our secret Butter Mah Bunz spiced 
+			butter.</description>
 			<price>13.69</price>
 			<imageURL>../../Media/eggBurg.jpg</imageURL>
 		</item>
 		<item>
-			<name>Club</name>
-			<description>Boggie with this classic</description>
+			<name>Club Sandwich</name>
+			<!--<description>Boggie with this classic</description>-->
+			<description>A true classic with our Butter Mah Buns twist! Turkey and ham with bacon, 
+			lettuce, tomato, and mayo on a bun buttered with our signature spiced butter.</description>
 			<price>10.69</price>
 			<imageURL>../../Media/partyClub.jpg</imageURL>
 		</item>
 		<item>
 			<name>Sloppy Joe</name>
-			<description>Feel free to ask for seconds of this sloppy situation</description>
+			<!--<description>Feel free to ask for seconds of this sloppy situation</description>-->
+			<description>Sometimes, simple is just better. Ground beef tossed in our homemade sloppy 
+			joe sauce slapped onto a Butter Mah Buns buttered bun. Make sure to grab some extra napkins 
+		or pack a second shirt.</description>
 			<price>10.50</price>
 			<imageURL>../../Media/sloppy.jpg</imageURL>
 		</item>
 		<item>
 			<name>Grilled cheese</name>
-			<description>From a simpler time for a simple place</description>
+			<!--<description>From a simpler time for a simple place</description>-->
+			<description>Meunster, Colby Jack, Cheddar, and Pepper Jack cheese layered onto seasoned 
+			bread and grilled to perfection in our Butter Mah Buns secret butter. Ooey, gooey, and oh 
+		so cheesy~</description>
 			<price>9.69</price>
 			<imageURL>../../Media/overlyCheesy.jpg</imageURL>
 		</item>
 		<item>
 			<name>Triple Bypass</name>
-			<description>Quickest way to get the chance to say "HELLO NURSE"</description>
+			<!--<description>Quickest way to get the chance to say "HELLO NURSE"</description>-->
+			<description>The only burger that comes with its own waiver! Beef and bacon intertwine to 
+			form a tower of artery-clogging bliss that you may not return from.</description>
 			<price>20.69</price>
 			<imageURL>../../Media/helloNurse.jpg</imageURL>
 		</item>
@@ -48,8 +64,12 @@
 			<price>1.50</price>
 		</enhancment>
 		<enhancment>
-			<name>+ atomic ass destroyer sauce</name>
+			<name>+ Spicy Bun Blaster sauce</name>
 			<price>2.50</price>
+		</enhancment>
+		<enhancment>
+			<name>+ Bacon</name>
+			<price>2.00</price>
 		</enhancment>
 	</enhancmentItems>
 </main>
