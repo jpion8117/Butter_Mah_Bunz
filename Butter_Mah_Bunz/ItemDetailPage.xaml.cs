@@ -43,6 +43,7 @@ namespace Butter_Mah_Bunz
             label.Width = 300;
             label.FontSize = 30;
             label.HorizontalContentAlignment = System.Windows.HorizontalAlignment.Center;
+            MainStack.Height += label.ActualHeight;
             //create and format item image
             System.Windows.Controls.Image img = new System.Windows.Controls.Image();
             img.Width = 300;
@@ -56,6 +57,7 @@ namespace Butter_Mah_Bunz
             {
                 img.Source = new BitmapImage(new Uri("pack://application:,,,/Butter_Mah_Bunz;component/Media/bmb.png"));
             }
+            MainStack.Height += img.ActualHeight;
 
             //create and format description TextBlock
             System.Windows.Controls.TextBlock description = new System.Windows.Controls.TextBlock();
@@ -64,13 +66,15 @@ namespace Butter_Mah_Bunz
             description.Width = 350;
             description.VerticalAlignment = VerticalAlignment.Center;
             description.FontSize = 14;
+            MainStack.Height += description.ActualHeight;
 
             //create and format price TextBlock
             System.Windows.Controls.TextBlock price = new System.Windows.Controls.TextBlock();
             price.Text = _baseItem.Price.ToString("C");
             price.FontSize = 24;
             price.HorizontalAlignment = HorizontalAlignment.Center;
-            
+            MainStack.Height += price.ActualHeight;
+
 
             ItemInfo.Children.Add(label);
             ItemInfo.Children.Add(img);
