@@ -38,12 +38,14 @@ namespace Butter_Mah_Bunz
 
             //add item image and details to ItemInfo
 
+            //Creates a label element to display the item name.
             System.Windows.Controls.Label label = new System.Windows.Controls.Label();
             label.Content = _baseItem.Name;
             label.Width = 300;
             label.FontSize = 30;
             label.HorizontalContentAlignment = System.Windows.HorizontalAlignment.Center;
             MainStack.Height += label.ActualHeight;
+
             //create and format item image
             System.Windows.Controls.Image img = new System.Windows.Controls.Image();
             img.Width = 300;
@@ -75,7 +77,7 @@ namespace Butter_Mah_Bunz
             price.HorizontalAlignment = HorizontalAlignment.Center;
             MainStack.Height += price.ActualHeight;
 
-
+            //Adds the information generated above into the MainStack element with formatting
             ItemInfo.Children.Add(label);
             ItemInfo.Children.Add(img);
             ItemInfo.Children.Add(price);
