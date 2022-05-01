@@ -57,9 +57,9 @@ namespace Butter_Mah_Bunz
                         img.Source = new BitmapImage(new Uri("pack://application:,,,/Butter_Mah_Bunz;component/Media/bmb.png"));
                     }
                     img.Width = 150;
-                    img.HorizontalAlignment = System.Windows.HorizontalAlignment.Center;
                     description.Text = item.Description;
                     price.Text = item.Price.ToString();
+                    listbox.HorizontalAlignment = System.Windows.HorizontalAlignment.Center;
                     listbox.Items.Add(label);
                     listbox.Items.Add(img);
                     listbox.Items.Add(description);
