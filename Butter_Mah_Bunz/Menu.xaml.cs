@@ -24,56 +24,19 @@ namespace Butter_Mah_Bunz
         {
             InitializeComponent();
 
-            //if (CoreComponents.ScheduleReady)
-            //{
-            //    Backend.ScheduleDay[] scheduleDays = CoreComponents.Schedule.ScheduleDays;
-            //    headLocation.Text = scheduleDays[0].Location;
-            //    headHours.Text = scheduleDays[0].TimesStr;
-            //}
-
             if (CoreComponents.MenuReady)
             {
                 Backend.Item[] menuItems = CoreComponents.MenuItems;
                 for (int index = 0; index < menuItems.Length; index++)
                 {
-                    Backend.Item item = menuItems[index];
-                    System.Windows.Controls.Label label = new System.Windows.Controls.Label();
-                    System.Windows.Controls.Image img = new System.Windows.Controls.Image();
-                    System.Windows.Controls.TextBlock description = new System.Windows.Controls.TextBlock();
-                    System.Windows.Controls.TextBlock price = new System.Windows.Controls.TextBlock();
-                    System.Windows.Controls.StackPanel superStacker9000 = new System.Windows.Controls.StackPanel();
-                    System.Windows.Controls.Button fItButton = new System.Windows.Controls.Button();
-
-                    superStacker9000.MinWidth = 414;
-                    label.Content = item.Name;
-                    label.Width = 414;
-                    label.FontSize = 30;
-                    label.HorizontalContentAlignment = System.Windows.HorizontalAlignment.Center;
-                    try
-                    {
-                        string url = "pack://application:,,,/Butter_Mah_Bunz;component/" + item.ImageURL;
-                        Uri uri = new Uri(url);
-                        img.Source = new BitmapImage(uri);
-                    }
-                    catch
-                    {
-                        img.Source = new BitmapImage(new Uri("pack://application:,,,/Butter_Mah_Bunz;component/Media/bmb.png"));
-                    }
-                    img.Width = 150;
-                    description.Text = item.Description;
-                    price.Text = item.Price.ToString("C");
-                    superStacker9000.Children.Add(label);
-                    superStacker9000.Children.Add(img);
-                    superStacker9000.Children.Add(description);
-                    superStacker9000.Children.Add(price);
-
-                    fItButton.Content = superStacker9000;
-                    fItButton.Margin = new System.Windows.Thickness(0, 0, 0, 15);
+                    Button fItButton = new ItemDetailsButton(menuItems[index]);
                     fItButton.Click += MenuItemClicked;
-                    if (index % 2 == 0)
+                    if (index % 2 == 0) //alternates button colors
                         fItButton.Background = new SolidColorBrush(CoreComponents.Ketchup);
                     else
                         fItButton.Background = new SolidColorBrush(CoreComponents.Beef);
+
+                    //add newly created button to the menuBox stack panel
                     MenuBox.Height += fItButton.ActualHeight;
                     MenuBox.Children.Add(fItButton);
                 }
@@ -82,17 +45,12 @@ namespace Butter_Mah_Bunz
 
         private void MenuItemClicked(object sender, RoutedEventArgs e)
         {
-            Button button = (Button)sender;
-            StackPanel panel = (StackPanel)button.Content;
-
-            //janky AF, but F*** it!
-            Label label = (Label)panel.Children[0];
-            string str = (string)label.Content;
+            ItemDetailsButton button = (ItemDetailsButton)sender;
 
             //update cart total.
             CartCount.Text = CoreComponents.CartCount.ToString();
 
-            this.NavigationService.Navigate(new ItemDetailPage(str));
+            this.NavigationService.Navigate(new ItemDetailPage(button.Item.Name));
         }
 
         private void GoBack(object sender, RoutedEventArgs e)
@@ -107,5 +65,61 @@ namespace Butter_Mah_Bunz
             else
                 System.Windows.MessageBox.Show("Thy buns remain barren (Cart is empty).", "Cart Empty");
         }
+    }
+    class ItemDetailsButton : Button
+    {
+        private Backend.Item _item; 
+        public Backend.Item Item
+        {
+            get { return _item; }
+        }
+        public ItemDetailsButton(Backend.Item item)
+        {
+            _item = item;
+
+            //create and format item Label
+            System.Windows.Controls.Label label = new System.Windows.Controls.Label();
+            label.Content = item.Name;
+            label.Width = 414;
+            label.FontSize = 30;
+            label.HorizontalContentAlignment = System.Windows.HorizontalAlignment.Center;
+
+            //create and format item image
+            System.Windows.Controls.Image img = new System.Windows.Controls.Image();
+            img.Width = 150;
+            try //tries to load the image file
+            {
+                string url = "pack://application:,,,/Butter_Mah_Bunz;component/" + item.ImageURL;
+                Uri uri = new Uri(url);
+                img.Source = new BitmapImage(uri);
+            }
+            catch //if the file is not found this will catch the exception and load a defualt image
+            {
+                img.Source = new BitmapImage(new Uri("pack://application:,,,/Butter_Mah_Bunz;component/Media/bmb.png"));
+            }
+
+            //create and format description TextBlock
+            System.Windows.Controls.TextBlock description = new System.Windows.Controls.TextBlock();
+            description.Text = item.Description;
+
+            //create and format price TextBlock
+            System.Windows.Controls.TextBlock price = new System.Windows.Controls.TextBlock();
+            price.Text = item.Price.ToString("C");
+
+            //create and format stack pannel for item button components
+            System.Windows.Controls.StackPanel superStacker9000 = new System.Windows.Controls.StackPanel();
+            superStacker9000.Width = 414;
+            superStacker9000.Children.Add(label);
+            superStacker9000.Children.Add(img);
+            superStacker9000.Children.Add(description);
+            superStacker9000.Children.Add(price);
+
+            this.Content = superStacker9000;
+            this.Margin = new System.Windows.Thickness(0, 0, 0, 15);
+        }
+    }
+    public class AddToCartButton : Button
+    {
+
     }
 }
