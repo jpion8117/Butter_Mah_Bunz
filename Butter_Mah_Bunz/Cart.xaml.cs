@@ -90,6 +90,18 @@ namespace Butter_Mah_Bunz
                 orderSubDisplay.Text = orderSub;
                 orderTaxDisplay.Text = orderTax;
 
+                orderTotalDisplay.FontSize = 24;
+                orderTotalDisplay.HorizontalAlignment = HorizontalAlignment.Center;
+                orderTotalDisplay.Margin = new Thickness(0, 10, 0, 0);
+
+                orderSubDisplay.FontSize = 16;
+                orderSubDisplay.HorizontalAlignment = HorizontalAlignment.Center;
+                orderSubDisplay.Margin = new Thickness(0, 10, 0, 0);
+
+                orderTaxDisplay.FontSize = 12;
+                orderTaxDisplay.HorizontalAlignment = HorizontalAlignment.Center;
+                orderTaxDisplay.Margin = new Thickness(0, 10, 0, 0);
+
                 OrderDetails.Children.Add(orderSubDisplay);
                 OrderDetails.Children.Add(orderTaxDisplay);
                 OrderDetails.Children.Add(orderTotalDisplay);
@@ -113,7 +125,7 @@ namespace Butter_Mah_Bunz
         }
 
         private void ToPayments(object sender, RoutedEventArgs e)
-        {
+        {        
             this.NavigationService.Navigate(new PaymentPage());
         }
     }
