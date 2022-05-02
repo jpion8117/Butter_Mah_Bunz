@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:Butter_Mah_Bunz"
       mc:Ignorable="d" 
       d:DesignHeight="896" d:DesignWidth="414"
-      Title="Cart" Background="#EDD4AB">
+      Title="Cart" Background="#EDD4AB" Loaded="Page_Loaded">
 
     <Grid>
         <StackPanel x:Name="MainPanel">

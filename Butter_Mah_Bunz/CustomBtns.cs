@@ -10,47 +10,7 @@ using System.Windows.Media.Imaging;
 
 namespace Butter_Mah_Bunz
 {
-    abstract class BMB_Button : Button
-    {
-        private SolidColorBrush _primaryBackground;
-        private SolidColorBrush _secondaryBackground;
-
-        public BMB_Button(SolidColorBrush? primaryColor = null, SolidColorBrush? secondaryColor = null)
-        {
-            if(primaryColor == null)
-                _primaryBackground = new SolidColorBrush(CoreComponents.Ketchup);
-            else
-                _primaryBackground = primaryColor;
-
-            if (secondaryColor == null)
-                _secondaryBackground = new SolidColorBrush(CoreComponents.Bun);
-            else
-                _secondaryBackground = secondaryColor;
-
-            //MouseEnter += toggleBackground;
-            //MouseLeave += toggleBackground;
-        }
-
-        public SolidColorBrush PrimaryColor
-        {
-            get { return _primaryBackground; }
-            set { _primaryBackground = value; }
-        }
-        public SolidColorBrush SecondaryColor
-        {
-            get { return _secondaryBackground; }
-            set { _secondaryBackground = value; } 
-        }
-
-        public virtual void toggleBackground(object sender, RoutedEventArgs e)
-        {
-            if(Background == _primaryBackground)
-                Background = _secondaryBackground;
-            else
-                Background = _primaryBackground;
-        }
-    }
-    class ItemDetailsButton : BMB_Button
+    class ItemDetailsButton : Button
     {
         private Backend.Item _item;
         public Backend.Item Item
@@ -102,7 +62,7 @@ namespace Butter_Mah_Bunz
             Margin = new System.Windows.Thickness(0, 15, 0, 0);
         }
     }
-    class AddToCartButton : BMB_Button
+    class AddToCartButton : Button
     {
         private Menu _pageRef;
         private Backend.Item _item;
@@ -125,7 +85,7 @@ namespace Butter_Mah_Bunz
         }
     }
 
-    class EnhancmentButton : BMB_Button
+    class EnhancmentButton : Button
     {
         private Backend.Enhancment _enhancment;
         private ItemDetailPage _callPage;
@@ -161,6 +121,72 @@ namespace Butter_Mah_Bunz
             }
 
             _priceBlock.Text = _callPage.Item.Price.ToString("C");
+        }
+    }
+
+    class CartButton : Button
+    {
+        private string _itemUID;
+
+        public CartButton(string[] itemInfo)
+        {
+            //constants for code clairity
+            const int UID = 0;
+            const int ITEM_NAME = 1;
+            const int ITEM_PRICE = 4;
+            const int ITEM_ENHANCMENT_START = 5;
+
+            //save the uID so button can identify object in click event
+            _itemUID = itemInfo[UID];
+
+            StackPanel itemStack = new StackPanel();
+            itemStack.Width = 414;
+
+            //Name left aligned, title larger. [i][1] name, 2 desc, 3 img url, 4 total string
+            Label itemName = new Label();
+            itemName.Content = itemInfo[ITEM_NAME];
+            //Formatting
+            itemName.Width = 300;
+            itemName.HorizontalAlignment = HorizontalAlignment.Left;
+            itemName.FontSize = 18;
+            //Adds formatted content to panel
+            itemStack.Children.Add(itemName);
+
+            for (int j = ITEM_ENHANCMENT_START; j < itemInfo.Length; j++)
+            {
+                //Smaller, right aligned - Enhancements loop
+                Label enhName = new Label();
+                enhName.Content = itemInfo[j];
+                //Formatting
+                enhName.Width = 150;
+                enhName.HorizontalAlignment = HorizontalAlignment.Left;
+                enhName.Margin = new Thickness(35, 5, 0, 3);
+                enhName.FontSize = 8;
+                //Adds formatted content to panel
+                itemStack.Children.Add(enhName);
+            }
+            //Price right-aligned, calculate periods between name and price. Larger than enhancements, smaller than name. [i][4]
+            Label price = new Label();
+            price.Content = itemInfo[ITEM_PRICE];
+            //Formatting
+            price.Width = 75;
+            price.HorizontalAlignment = HorizontalAlignment.Right;
+            price.FontSize = 14;
+            //Adds formatted content to panel
+            itemStack.Children.Add(price);
+
+            //place the itemStack Content into this button
+            Content = itemStack;
+
+            //event listener
+            Click += deleteItem;
+        }
+
+        private void deleteItem(object sender, RoutedEventArgs e)
+        {
+            CoreComponents.removeFromCart(_itemUID);
+            if(CoreComponents.TomTom != null)
+                CoreComponents.TomTom.Refresh();
         }
     }
 }
