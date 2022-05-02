@@ -15,9 +15,17 @@
                 <TextBlock HorizontalAlignment="Left" Margin="170,12,0,0" TextWrapping="Wrap" Text="Location" VerticalAlignment="Top" Width="237" TextAlignment="Center" FontSize="22" FontFamily="/Fonts/#Indie Flower" FontWeight="UltraBold"/>
                 <TextBlock x:Name="headLocation" HorizontalAlignment="Left" Height="30" Margin="170,45,0,0" 
                        TextWrapping="Wrap" VerticalAlignment="Top" Width="237" TextAlignment="Center" 
-                       FontSize="22" FontFamily="/Fonts/#Indie Flower" FontWeight="UltraBold"/>
+                       FontSize="22" FontFamily="/Fonts/#Indie Flower" FontWeight="UltraBold" Text="{Binding Schedule[0].Location}">
+                    <TextBlock.DataContext>
+                        <local:CoreComponents/>
+                    </TextBlock.DataContext>
+                </TextBlock>
                 <TextBlock HorizontalAlignment="Left" Height="30" Margin="170,83,0,0" TextWrapping="Wrap" Text="Hours" VerticalAlignment="Top" Width="237" TextAlignment="Center" FontSize="22" FontFamily="/Fonts/#Indie Flower" FontWeight="UltraBold"/>
-                <TextBlock x:Name="headHours" HorizontalAlignment="Left" Height="30" Margin="170,124,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="237" TextAlignment="Center" FontSize="22" FontFamily="/Fonts/#Indie Flower" FontWeight="UltraBold"/>
+                <TextBlock x:Name="headHours" HorizontalAlignment="Left" Height="30" Margin="170,124,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="237" TextAlignment="Center" FontSize="22" FontFamily="/Fonts/#Indie Flower" FontWeight="UltraBold" Text="{Binding Schedule[0].TimesStr}">
+                    <TextBlock.DataContext>
+                        <local:CoreComponents/>
+                    </TextBlock.DataContext>
+                </TextBlock>
             </Grid>
             <Grid Height="48" Width="398">
                 <Button x:Name="BackButton" Click="GoBack" Background="{x:Null}" Margin="0,0,366,15" BorderThickness="0,0,0,0" >
