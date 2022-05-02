@@ -37,31 +37,56 @@ namespace Butter_Mah_Bunz
                 CoreComponents.destroyCart();
                 this.NavigationService.Navigate(new HomePage());
             }
-        }
 
-        private void Page_Loaded(object sender, RoutedEventArgs e)
-        {
-            OrderDetails.Children.Clear(); //Bit extreme if you ask me...
-            
-            if (!CoreComponents.CartEmpty)
-            {
-                foreach (string[] item in CoreComponents.CartDetails)
-                {
-                    CartButton button = new CartButton(item);
-                    
-                    OrderDetails.Children.Add(button);
-                    OrderDetails.Height += button.ActualHeight;
-                }
-            }
-            else
-            {
-                this.NavigationService.GoBack();
-            }
         }
 
         private void ToPayments(object sender, RoutedEventArgs e)
         {
             this.NavigationService.Navigate(new PaymentPage());
+        }
+
+        private void Page_Loaded(object sender, RoutedEventArgs e)
+        {
+            //This line is a bit dark... ⊙﹏⊙∥
+            OrderDetails.Children.Clear();
+
+            if (!CoreComponents.CartEmpty)
+            {
+                string[][] cartItems = CoreComponents.CartDetails;
+
+                for (int i = 0; i < cartItems.Length; i++)
+                {
+                    CartButton button = new CartButton(cartItems[i]);
+
+                    OrderDetails.Height += button.ActualHeight;
+                    MainPanel.Height += button.ActualHeight;
+
+                    OrderDetails.Children.Add(button);
+                }
+
+                //Generates TextBlocks to display totals.
+                TextBlock orderTotalDisplay = new TextBlock();
+                TextBlock orderSubDisplay = new TextBlock();
+                TextBlock orderTaxDisplay = new TextBlock();
+
+                string orderTotal, orderSub, orderTax = "";
+
+                orderTotal = CoreComponents.CartTotal;
+                orderSub = CoreComponents.CartSubtotal;
+                orderTax = CoreComponents.CartTax;
+
+                orderTotalDisplay.Text = orderTotal;
+                orderSubDisplay.Text = orderSub;
+                orderTaxDisplay.Text = orderTax;
+
+                OrderDetails.Children.Add(orderSubDisplay);
+                OrderDetails.Children.Add(orderTaxDisplay);
+                OrderDetails.Children.Add(orderTotalDisplay);
+            }
+            else
+            {
+                this.NavigationService.GoBack();
+            }
         }
     }
 }
