@@ -135,7 +135,7 @@ namespace Butter_Mah_Bunz
             _enhancment = enhancment;
             _callPage = callPage;
 
-            
+            Click += ClickClack;
         }
         private void ClickClack(object sender, RoutedEventArgs e)
         {
