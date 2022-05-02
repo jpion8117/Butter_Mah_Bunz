@@ -187,6 +187,10 @@ namespace Butter_Mah_Bunz
         {
             _cart.removeFromOrder(CartDetails[index][0]); //uniqueID is always the first string in each of the inner item arrays
         }
+        static public void destroyCart()
+        {
+            _cart = new Backend.Order();
+        }
         
 
         public CoreComponents() {} //instance constructor needed for XAML data binding...

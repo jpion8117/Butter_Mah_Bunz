@@ -69,11 +69,26 @@ namespace Butter_Mah_Bunz
 
                     //Add content to button and add button to screen. Yup.
                     button.Content = itemStack;
-                    button.VerticalAlignment = VerticalAlignment.Top;
                     OrderDetails.Height += button.ActualHeight;
+                    MainPanel.Height += button.ActualHeight;
                     OrderDetails.Children.Add(button);
                 }
             }
+        }
+        private void GoBack(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.GoBack();
+        }
+
+        private void CancelOrder(object sender, RoutedEventArgs e)
+        {
+            MessageBoxResult cartEmptyYN = MessageBox.Show("Would you like to empty thy buns?", "Empty Cart", MessageBoxButton.YesNo);
+            if (cartEmptyYN == MessageBoxResult.Yes)
+            {
+                CoreComponents.destroyCart();
+                this.NavigationService.Navigate(new HomePage());
+            }
+
         }
     }
 }
