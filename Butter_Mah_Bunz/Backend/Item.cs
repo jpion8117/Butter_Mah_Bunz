@@ -87,7 +87,7 @@ namespace Backend
         {
             get { return _description; }
         }
-        public double Price
+        public virtual double Price
         {
             get { return _price; }
         }
