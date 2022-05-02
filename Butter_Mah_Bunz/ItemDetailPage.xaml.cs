@@ -99,5 +99,9 @@ namespace Butter_Mah_Bunz
                 System.Windows.MessageBox.Show("Thy buns remain barren (Cart is empty).", "Cart Empty");
         }
 
+        private void AddToCart(object sender, RoutedEventArgs e)
+        {         
+            this.NavigationService.GoBack();
+        }
     }
 }
