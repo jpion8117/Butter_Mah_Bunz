@@ -21,6 +21,18 @@ namespace Backend
         {
             return _enhancments.Remove(itemEnhancment);
         }
+        public override double Price
+        {
+            get
+            {
+                for (int i = 0; i < _enhancments.Count; i++)
+                {
+                    _price += _enhancments[i].Price;
+                }
+
+                return _price;
+            }
+        }
         override public string[] getItemInfo(bool closeItem = true)
         {
             List<string> items = base.getItemInfo(false).ToList();
