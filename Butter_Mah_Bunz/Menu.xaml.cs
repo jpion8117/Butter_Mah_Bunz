@@ -70,5 +70,11 @@ namespace Butter_Mah_Bunz
             else
                 System.Windows.MessageBox.Show("Thy buns remain barren.", "Cart Empty");
         }
+
+        private void OnLoad(object sender, RoutedEventArgs e)
+        {
+            //update cart total.
+            CartCount.Text = CoreComponents.CartCount.ToString();
+        }
     }
 }

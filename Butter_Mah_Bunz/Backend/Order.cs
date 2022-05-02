@@ -101,6 +101,7 @@ namespace Backend
             {
                 if(_orderItems[index].UniqueID == itemUID)
                 {
+                    SubTotal -= _orderItems[index].Price;
                     _orderItems.RemoveAt(index);
                     return;
                 }

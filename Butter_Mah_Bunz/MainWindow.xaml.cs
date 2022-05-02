@@ -23,7 +23,9 @@ namespace Butter_Mah_Bunz
         public MainWindow()
         {
             InitializeComponent();
-            
+
+            CoreComponents.setWindow(this);
+
             MainWindowFrame.NavigationService.Navigate(new SplashPage());
         }
     }
