@@ -5,6 +5,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel;
+using System.Windows;
+using System.Windows.Navigation;
 
 namespace Butter_Mah_Bunz
 {
@@ -17,9 +19,28 @@ namespace Butter_Mah_Bunz
         static private Backend.Order _cart = new Backend.Order();
         static private bool _scheduleReady = false;
         static private bool _menuReady = false;
-
+        static private MainWindow? _main = null;
+        static private NavigationService? _navigationService = null;
 
         //static public properties
+        static public MainWindow? Main
+        {
+            get
+            {
+                return _main;
+            }
+        }
+        /// <summary>
+        /// Used to access the main frame navagation service universally
+        /// </summary>
+        static public NavigationService? TomTom
+        {
+            get { return _navigationService; }
+        }
+        static public bool TomTomReady
+        {
+            get { return _navigationService != null; }
+        }
         static public Backend.Item[] MenuItems
         {
             get
@@ -184,15 +205,19 @@ namespace Butter_Mah_Bunz
         {
             _cart.addToOrder(newItem);
         }
-        static public void removeFromCart(int index)
+        static public void removeFromCart(string uID)
         {
-            _cart.removeFromOrder(CartDetails[index][0]); //uniqueID is always the first string in each of the inner item arrays
+            _cart.removeFromOrder(uID);
         }
         static public void destroyCart()
         {
             _cart = new Backend.Order();
         }
-        
+        static public void setWindow(MainWindow window)
+        {
+            _main = window;
+            _navigationService = window.MainWindowFrame.NavigationService;
+        }
 
         public CoreComponents() {} //instance constructor needed for XAML data binding...
     }
