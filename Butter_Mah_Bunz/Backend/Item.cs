@@ -110,9 +110,12 @@ namespace Backend
             items.Add(_name);
             items.Add(_description);
             items.Add(_imageURL);
-            items.Add(_price.ToString("C"));
+            items.Add(Price.ToString("C"));
 
-            if (closeItem) items.Add(ITEM_END);
+            if (closeItem)
+            {
+                items.Add(ITEM_END);
+            }
 
             //return array
             return items.ToArray();

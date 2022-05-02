@@ -25,18 +25,20 @@ namespace Backend
         {
             get
             {
+                double addonPrice = 0;
+
                 for (int i = 0; i < _enhancments.Count; i++)
                 {
-                    _price += _enhancments[i].Price;
+                    addonPrice += _enhancments[i].Price;
                 }
 
-                return _price;
+                return _price + addonPrice;
             }
         }
         override public string[] getItemInfo(bool closeItem = true)
         {
             List<string> items = base.getItemInfo(false).ToList();
-            if (items[items.Count - 1] != Item.ITEM_END)
+            if (items[items.Count - 1] == Item.ITEM_END)
                 throw new FormatException("Premature end of item detected");
 
 
