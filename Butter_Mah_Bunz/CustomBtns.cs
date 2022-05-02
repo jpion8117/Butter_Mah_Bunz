@@ -104,6 +104,8 @@ namespace Butter_Mah_Bunz
             Margin = new Thickness(0, 3, 15, 0);
             Width = 300;
 
+            var dumDum = true;
+
             Click += ClickClack;
         }
         private void ClickClack(object sender, RoutedEventArgs e)
