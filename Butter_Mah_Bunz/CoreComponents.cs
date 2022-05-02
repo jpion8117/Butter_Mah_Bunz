@@ -129,6 +129,20 @@ namespace Butter_Mah_Bunz
         {
             get { return CartDetails.Length; }
         }
+        static public string CartTotal
+        {
+            get { return "Total: " + _cart.Total.ToString("C"); }
+        }
+
+        static public string CartTax
+        {
+            get { return "Tax: " + _cart.Tax.ToString("C"); }
+        }
+
+        static public string CartSubtotal
+        {
+            get { return "Subtotal: " + _cart.SubTotal.ToString("C"); }
+        }
         
         //static methods
         static public bool initialize()
