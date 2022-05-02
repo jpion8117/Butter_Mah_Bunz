@@ -41,6 +41,7 @@ namespace Butter_Mah_Bunz
                     itemName.Width = 300;
                     itemName.HorizontalAlignment = HorizontalAlignment.Left;
                     itemName.FontSize = 18;
+                    itemName.Margin = new Thickness(0, 0, 0, 15);
                     //Adds formatted content to panel
                     itemStack.Children.Add(itemName);
 
@@ -50,10 +51,10 @@ namespace Butter_Mah_Bunz
                         Label enhName = new Label();
                         enhName.Content = cartItems[i][j];
                         //Formatting
-                        enhName.Width = 150;
+                        enhName.Width = 250;
                         enhName.HorizontalAlignment = HorizontalAlignment.Left;
-                        enhName.Margin = new Thickness(35, 5, 0, 3);
-                        enhName.FontSize = 8;
+                        enhName.Margin = new Thickness(35, -10, 0, 0);
+                        enhName.FontSize = 12;
                         //Adds formatted content to panel
                         itemStack.Children.Add(enhName);
                     } 
@@ -69,6 +70,10 @@ namespace Butter_Mah_Bunz
 
                     //Add content to button and add button to screen. Yup.
                     button.Content = itemStack;
+                    button.Margin = new Thickness(0, 6, 0, 0);
+                    button.Background = new SolidColorBrush(CoreComponents.Ketchup);
+                    button.BorderBrush = new SolidColorBrush(CoreComponents.Beef);
+                    button.BorderThickness = new Thickness(6);
                     OrderDetails.Height += button.ActualHeight;
                     MainPanel.Height += button.ActualHeight;
                     OrderDetails.Children.Add(button);
