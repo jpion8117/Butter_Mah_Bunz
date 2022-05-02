@@ -124,4 +124,30 @@ namespace Butter_Mah_Bunz
             _pageRef.CartCount.Text = CoreComponents.CartCount.ToString();
         }
     }
+
+    class EnhancmentButton : BMB_Button
+    {
+        private Backend.Enhancment _enhancment;
+        private ItemDetailPage _callPage;
+
+        public EnhancmentButton(Backend.Enhancment enhancment, ItemDetailPage callPage)
+        {
+            _enhancment = enhancment;
+            _callPage = callPage;
+
+            Click += ClickClack;
+        }
+        private void ClickClack(object sender, RoutedEventArgs e)
+        {
+            if(_callPage.Item.removeEnhancment(_enhancment))
+            {
+                Background = new SolidColorBrush(CoreComponents.Beef);
+            }
+            else
+            {
+                _callPage.Item.addEnhancment(_enhancment);
+                Background = new SolidColorBrush(CoreComponents.Ketchup);
+            }
+        }
+    }
 }

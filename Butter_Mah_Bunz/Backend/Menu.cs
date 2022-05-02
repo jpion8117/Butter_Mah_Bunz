@@ -9,7 +9,7 @@ using System.Xml.Linq;
 namespace Backend
 {
     
-    internal class Menu
+    public class Menu
     {
         //settings filepath
         const string MENU_FILE_PATH = "Backend/Menu/menu.xml";

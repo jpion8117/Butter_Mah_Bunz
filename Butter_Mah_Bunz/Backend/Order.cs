@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Backend
 {
-    internal class Order
+    public class Order
     {
         private List<Item> _orderItems = new List<Item>();
         private double _subTotal;
