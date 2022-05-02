@@ -64,6 +64,7 @@ namespace Butter_Mah_Bunz
                     OrderDetails.Children.Add(button);
                 }
 
+
                 //Generates TextBlocks to display totals.
                 TextBlock orderTotalDisplay = new TextBlock();
                 TextBlock orderSubDisplay = new TextBlock();
@@ -78,6 +79,18 @@ namespace Butter_Mah_Bunz
                 orderTotalDisplay.Text = orderTotal;
                 orderSubDisplay.Text = orderSub;
                 orderTaxDisplay.Text = orderTax;
+
+                orderTotalDisplay.FontSize = 24;
+                orderTotalDisplay.HorizontalAlignment = HorizontalAlignment.Center;
+                orderTotalDisplay.Margin = new Thickness(0, 10, 0, 0);
+
+                orderSubDisplay.FontSize = 16;
+                orderSubDisplay.HorizontalAlignment = HorizontalAlignment.Center;
+                orderSubDisplay.Margin = new Thickness(0, 10, 0, 0);
+
+                orderTaxDisplay.FontSize = 12;
+                orderTaxDisplay.HorizontalAlignment = HorizontalAlignment.Center;
+                orderTaxDisplay.Margin = new Thickness(0, 10, 0, 0);
 
                 OrderDetails.Children.Add(orderSubDisplay);
                 OrderDetails.Children.Add(orderTaxDisplay);
