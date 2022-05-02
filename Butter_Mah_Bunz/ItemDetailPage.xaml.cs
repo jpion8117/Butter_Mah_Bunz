@@ -77,6 +77,7 @@ namespace Butter_Mah_Bunz
             price.Text = _item.Price.ToString("C");
             price.FontSize = 24;
             price.HorizontalAlignment = HorizontalAlignment.Center;
+            price.Name = "ItemPrice";
             MainStack.Height += price.ActualHeight;
 
             //Adds the information generated above into the MainStack element with formatting
@@ -86,6 +87,12 @@ namespace Butter_Mah_Bunz
             ItemInfo.Children.Add(description);
 
             //add available enhancments Enhancments
+            Backend.Enhancment[] enhancments = CoreComponents.Enhancments;
+            foreach (Backend.Enhancment enhancment in enhancments)
+            {
+                EnhancmentButton enhancmentButton = new EnhancmentButton(enhancment, this, price);
+                Enhancments.Children.Add(enhancmentButton);
+            }
 
         }
         private void GoBack(object sender, RoutedEventArgs e)
@@ -98,11 +105,12 @@ namespace Butter_Mah_Bunz
             if (!CoreComponents.CartEmpty)
                 this.NavigationService.Navigate(new Cart());
             else
-                System.Windows.MessageBox.Show("Thy buns remain barren (Cart is empty).", "Cart Empty");
+                MessageBox.Show("Thy buns remain barren (Cart is empty).", "Cart Empty");
         }
 
         private void AddToCart(object sender, RoutedEventArgs e)
-        {         
+        {
+            CoreComponents.addToCart(_item);
             this.NavigationService.GoBack();
         }
     }

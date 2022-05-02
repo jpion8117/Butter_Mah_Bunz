@@ -162,6 +162,7 @@ namespace Butter_Mah_Bunz
                 menu.LoadMenu();
 
                 _menuItems = menu.MenuItems.ToArray();
+                _enhancments = menu.Enhancments.ToArray();
                 _menuReady = menu.MenuReady;
             }
 

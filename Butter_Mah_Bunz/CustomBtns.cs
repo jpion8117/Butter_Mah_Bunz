@@ -129,11 +129,16 @@ namespace Butter_Mah_Bunz
     {
         private Backend.Enhancment _enhancment;
         private ItemDetailPage _callPage;
+        private TextBlock _priceBlock;
 
-        public EnhancmentButton(Backend.Enhancment enhancment, ItemDetailPage callPage)
+        public EnhancmentButton(Backend.Enhancment enhancment, ItemDetailPage callPage, TextBlock priceBlock)
         {
             _enhancment = enhancment;
             _callPage = callPage;
+            _priceBlock = priceBlock;
+   
+            Background = new SolidColorBrush(CoreComponents.Beef);
+            Content = enhancment.Name + " " + enhancment.Price.ToString();
 
             Click += ClickClack;
         }
@@ -148,6 +153,8 @@ namespace Butter_Mah_Bunz
                 _callPage.Item.addEnhancment(_enhancment);
                 Background = new SolidColorBrush(CoreComponents.Ketchup);
             }
+
+            _priceBlock.Text = _callPage.Item.Price.ToString("C");
         }
     }
 }
