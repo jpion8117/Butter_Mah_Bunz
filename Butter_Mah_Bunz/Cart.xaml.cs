@@ -72,7 +72,28 @@ namespace Butter_Mah_Bunz
                     OrderDetails.Height += button.ActualHeight;
                     MainPanel.Height += button.ActualHeight;
                     OrderDetails.Children.Add(button);
+
                 }
+
+                //Generates TextBlocks to display totals.
+                TextBlock orderTotalDisplay = new TextBlock();
+                TextBlock orderSubDisplay = new TextBlock();
+                TextBlock orderTaxDisplay = new TextBlock();
+
+                string orderTotal, orderSub, orderTax = "";
+
+                orderTotal = CoreComponents.CartTotal;
+                orderSub = CoreComponents.CartSubtotal;
+                orderTax = CoreComponents.CartTax;
+
+                orderTotalDisplay.Text = orderTotal;
+                orderSubDisplay.Text = orderSub;
+                orderTaxDisplay.Text = orderTax;
+
+                OrderDetails.Children.Add(orderSubDisplay);
+                OrderDetails.Children.Add(orderTaxDisplay);
+                OrderDetails.Children.Add(orderTotalDisplay);
+
             }
         }
         private void GoBack(object sender, RoutedEventArgs e)
@@ -89,6 +110,11 @@ namespace Butter_Mah_Bunz
                 this.NavigationService.Navigate(new HomePage());
             }
 
+        }
+
+        private void ToPayments(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.Navigate(new PaymentPage());
         }
     }
 }
