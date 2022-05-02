@@ -45,7 +45,7 @@
             </Grid>
             <StackPanel x:Name="ItemInfo" Width="414"/>
             <StackPanel x:Name="Enhancments" Width="414"/>
-            <Button x:Name="AddToCartBtn" Content="Add to Cart" Height="32" Width="110" Margin="0, 30, 0, 0" Click="AddToCart"/>
+            <Button x:Name="AddToCartBtn" Content="Add to Cart" Height="71" Width="354" Margin="0, 30, 0, 0" Click="AddToCart" Foreground="White" Background="#FFCF3613" FontWeight="Bold" FontSize="36"/>
         </StackPanel>
 
     </Grid>

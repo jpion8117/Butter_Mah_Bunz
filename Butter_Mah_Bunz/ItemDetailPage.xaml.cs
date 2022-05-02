@@ -102,6 +102,9 @@ namespace Butter_Mah_Bunz
 
         private void ToCart(object sender, RoutedEventArgs e)
         {
+            //add current item to the cart
+            CoreComponents.addToCart(_item);
+
             if (!CoreComponents.CartEmpty)
                 this.NavigationService.Navigate(new Cart());
             else
