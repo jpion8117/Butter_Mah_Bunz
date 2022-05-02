@@ -98,8 +98,8 @@ namespace Butter_Mah_Bunz
             superStacker9000.Children.Add(description);
             superStacker9000.Children.Add(price);
 
-            this.Content = superStacker9000;
-            this.Margin = new System.Windows.Thickness(0, 15, 0, 0);
+            Content = superStacker9000;
+            Margin = new System.Windows.Thickness(0, 15, 0, 0);
         }
     }
     class AddToCartButton : BMB_Button
@@ -138,7 +138,11 @@ namespace Butter_Mah_Bunz
             _priceBlock = priceBlock;
    
             Background = new SolidColorBrush(CoreComponents.Beef);
-            Content = enhancment.Name + " " + enhancment.Price.ToString();
+            Content = enhancment.Name + " " + enhancment.Price.ToString("C");
+            HorizontalAlignment = HorizontalAlignment.Right;
+            HorizontalContentAlignment = HorizontalAlignment.Right;
+            Margin = new Thickness(0, 3, 15, 0);
+            Width = 300;
 
             Click += ClickClack;
         }
@@ -147,10 +151,12 @@ namespace Butter_Mah_Bunz
             if(_callPage.Item.removeEnhancment(_enhancment))
             {
                 Background = new SolidColorBrush(CoreComponents.Beef);
+                    Content = _enhancment.Name  + " " + _enhancment.Price.ToString("C");
             }
             else
             {
                 _callPage.Item.addEnhancment(_enhancment);
+                Content = _enhancment.Name.Replace("+", "-") + " " + _enhancment.Price.ToString("C");
                 Background = new SolidColorBrush(CoreComponents.Ketchup);
             }
 
