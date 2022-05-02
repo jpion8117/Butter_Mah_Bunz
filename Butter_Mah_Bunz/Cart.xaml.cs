@@ -64,8 +64,8 @@ namespace Butter_Mah_Bunz
                 {
                     CartButton button = new CartButton(cartItems[i]);
 
-                    OrderDetails.Height += button.ActualHeight;
-                    MainPanel.Height += button.ActualHeight;
+                    //OrderDetails.Height += button.ActualHeight;
+                    //MainPanel.Height += button.ActualHeight;
 
                     OrderDetails.Children.Add(button);
                 }
