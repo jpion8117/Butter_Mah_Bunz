@@ -29,7 +29,7 @@
                 <Button x:Name="CancelButton" Content="Cancel" 
                 Background="#9A5040" FontFamily="/Fonts/#Indie Flower" FontSize="25" Height="40" Width="134" Margin="50, 0, 50, 0" Click="CancelOrder"/>
                 <Button x:Name="ContinueButton" Content="Continue"
-                Background="#CF3613" FontFamily="/Fonts/#Indie Flower" FontSize="25" Height="40" Width="134"/>
+                Background="#CF3613" FontFamily="/Fonts/#Indie Flower" FontSize="25" Height="40" Width="134" Click="ToPayments"/>
             </WrapPanel>
         </StackPanel>
     </Grid>
