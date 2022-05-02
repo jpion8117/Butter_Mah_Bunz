@@ -17,9 +17,9 @@ namespace Backend
         {
             _enhancments.Add(itemEnhancment);
         }
-        public void removeEnhancment(Enhancment itemEnhancment)
+        public bool removeEnhancment(Enhancment itemEnhancment)
         {
-            _enhancments.Remove(itemEnhancment);
+            return _enhancments.Remove(itemEnhancment);
         }
         override public string[] getItemInfo(bool closeItem = true)
         {
