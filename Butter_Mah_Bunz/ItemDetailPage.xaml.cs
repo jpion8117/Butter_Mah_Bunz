@@ -20,8 +20,12 @@ namespace Butter_Mah_Bunz
     /// </summary>
     public partial class ItemDetailPage : Page
     {
-        private Backend.Item _baseItem;
-        private Backend.EnhancedItem _enhancedItem;
+        private Backend.EnhancedItem _item;
+        public Backend.EnhancedItem Item
+        {
+            get { return _item; }
+            set { _item = value; }
+        }
         public ItemDetailPage(string baseItemName)
         {
             InitializeComponent();
@@ -30,16 +34,14 @@ namespace Butter_Mah_Bunz
 
             //lookup base item
             Backend.Item? item = CoreComponents.locateMenuItem(baseItemName);
-            _baseItem = new Backend.Item("", "", 0);
+            _item = new Backend.EnhancedItem("", "", 0);
             if (item != null)
-                _baseItem = new Backend.Item(item);
-
-            _enhancedItem = new Backend.EnhancedItem(_baseItem);
+                _item = new Backend.EnhancedItem(item);
 
             //add item image and details to ItemInfo
 
             System.Windows.Controls.Label label = new System.Windows.Controls.Label();
-            label.Content = _baseItem.Name;
+            label.Content = _item.Name;
             label.Width = 300;
             label.FontSize = 30;
             label.HorizontalContentAlignment = System.Windows.HorizontalAlignment.Center;
@@ -49,7 +51,7 @@ namespace Butter_Mah_Bunz
             img.Width = 300;
             try //tries to load the image file
             {
-                string url = "pack://application:,,,/Butter_Mah_Bunz;component/" + _baseItem.ImageURL;
+                string url = "pack://application:,,,/Butter_Mah_Bunz;component/" + _item.ImageURL;
                 Uri uri = new Uri(url);
                 img.Source = new BitmapImage(uri);
             }
@@ -61,7 +63,7 @@ namespace Butter_Mah_Bunz
 
             //create and format description TextBlock
             System.Windows.Controls.TextBlock description = new System.Windows.Controls.TextBlock();
-            description.Text = _baseItem.Description;
+            description.Text = _item.Description;
             description.TextWrapping = TextWrapping.Wrap;
             description.Width = 350;
             description.VerticalAlignment = VerticalAlignment.Center;
@@ -70,7 +72,7 @@ namespace Butter_Mah_Bunz
 
             //create and format price TextBlock
             System.Windows.Controls.TextBlock price = new System.Windows.Controls.TextBlock();
-            price.Text = _baseItem.Price.ToString("C");
+            price.Text = _item.Price.ToString("C");
             price.FontSize = 24;
             price.HorizontalAlignment = HorizontalAlignment.Center;
             MainStack.Height += price.ActualHeight;

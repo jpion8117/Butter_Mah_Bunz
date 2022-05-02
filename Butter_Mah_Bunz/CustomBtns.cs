@@ -128,8 +128,26 @@ namespace Butter_Mah_Bunz
     class EnhancmentButton : BMB_Button
     {
         private Backend.Enhancment _enhancment;
-        private Backend.EnhancedItem _item;
+        private ItemDetailPage _callPage;
 
-        public Backend.EnhancedItem Item
+        public EnhancmentButton(Backend.Enhancment enhancment, ItemDetailPage callPage)
+        {
+            _enhancment = enhancment;
+            _callPage = callPage;
+
+            
+        }
+        private void ClickClack(object sender, RoutedEventArgs e)
+        {
+            if(_callPage.Item.removeEnhancment(_enhancment))
+            {
+                Background = new SolidColorBrush(CoreComponents.Beef);
+            }
+            else
+            {
+                _callPage.Item.addEnhancment(_enhancment);
+                Background = new SolidColorBrush(CoreComponents.Ketchup);
+            }
+        }
     }
 }
