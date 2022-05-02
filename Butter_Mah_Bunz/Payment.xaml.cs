@@ -34,5 +34,10 @@ namespace Butter_Mah_Bunz
         {
 
         }
+
+        private void GoBack(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.GoBack();
+        }
     }
 }
