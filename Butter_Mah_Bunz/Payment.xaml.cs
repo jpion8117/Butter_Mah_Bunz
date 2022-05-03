@@ -91,7 +91,8 @@ namespace Butter_Mah_Bunz
                         if (item[5] != null)
                         {
                           string enchancmentIsHere = "--Enhancements:";
-                            int lengthHolder = item.Length;
+                           fillWithOrder.Add(enchancmentIsHere);
+                          int lengthHolder = item.Length;
                           for (int i= 5;i<lengthHolder ; i++)
                           {
                               string itemHolder = item[i];
