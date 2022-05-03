@@ -12,6 +12,7 @@ namespace Backend
         private double _subTotal;
         private double _tax;
         private double _total;
+        private int _itemsInCart = 0;
 
         public Order()
         {
@@ -20,6 +21,27 @@ namespace Backend
             _total = 0;
         }
 
+        public bool CartFull
+        {
+            get 
+            {
+                int cartCount = 0;
+
+                foreach (Item item in _orderItems)
+                {
+                    if(item.IsEnhanced)
+                    {
+                        cartCount += 3;
+                    }
+                    else
+                    {
+                        cartCount++;
+                    }
+                }
+
+                return cartCount >= 8;
+            }
+        }
         public int Size
         {
             get { return _orderItems.Count; }

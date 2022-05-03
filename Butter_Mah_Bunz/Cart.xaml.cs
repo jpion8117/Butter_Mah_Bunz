@@ -63,6 +63,9 @@ namespace Butter_Mah_Bunz
                 for (int i = 0; i < cartItems.Length; i++)
                 {
                     CartButton button = new CartButton(cartItems[i]);
+                    button.Background = new SolidColorBrush(CoreComponents.Ketchup);
+                    if (i % 2 == 0) 
+                        button.Background = new SolidColorBrush(CoreComponents.Beef);
 
                     //OrderDetails.Height += button.ActualHeight;
                     //MainPanel.Height += button.ActualHeight;

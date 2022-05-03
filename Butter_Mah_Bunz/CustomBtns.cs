@@ -81,6 +81,7 @@ namespace Butter_Mah_Bunz
         public void addItemToCart(object sender, RoutedEventArgs e)
         {
             CoreComponents.addToCart(_item);
+
             _pageRef.CartCount.Text = CoreComponents.CartCount.ToString();
         }
     }

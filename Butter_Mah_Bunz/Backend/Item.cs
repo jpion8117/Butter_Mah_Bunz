@@ -79,6 +79,11 @@ namespace Backend
         protected string _imageURL;
         protected double _price;
         protected string _uniqueID;
+
+        public virtual bool IsEnhanced
+        {
+            get { return false; }
+        }
         public string Name
         {
             get { return _name; }

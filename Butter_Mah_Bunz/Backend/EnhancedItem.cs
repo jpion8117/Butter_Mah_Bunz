@@ -8,8 +8,8 @@ namespace Backend
 {
     public class EnhancedItem : Item
     {
-        public EnhancedItem(string name, string description, double price, string imageURL = "") : base(name, description, price, imageURL) {}
-        public EnhancedItem(Item baseItem) : base(baseItem) {}
+        public EnhancedItem(string name, string description, double price, string imageURL = "") : base(name, description, price, imageURL) { }
+        public EnhancedItem(Item baseItem) : base(baseItem) { }
 
         private List<Enhancment> _enhancments = new List<Enhancment>();
 
@@ -20,6 +20,10 @@ namespace Backend
         public bool removeEnhancment(Enhancment itemEnhancment)
         {
             return _enhancments.Remove(itemEnhancment);
+        }
+        public override bool IsEnhanced
+        {
+            get { return true; }
         }
         public override double Price
         {

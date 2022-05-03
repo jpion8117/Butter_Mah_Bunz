@@ -203,7 +203,19 @@ namespace Butter_Mah_Bunz
         }
         static public void addToCart(Backend.Item newItem)
         {
-            _cart.addToOrder(newItem);
+            string[] itemInfo = newItem.getItemInfo();
+
+            if (_cart.CartFull)
+            {
+                MessageBox.Show("Thy buns are too powerful! Please call" +
+                    "1-888-867-5309 to place your order, or remove something " +
+                    "from your cart", "Cart Full");
+
+                if (TomTom != null)
+                    TomTom.Navigate(new Cart());
+            }
+            else
+                _cart.addToOrder(newItem);
         }
         static public void removeFromCart(string uID)
         {
