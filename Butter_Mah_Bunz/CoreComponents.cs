@@ -207,7 +207,7 @@ namespace Butter_Mah_Bunz
 
             if (_cart.CartFull)
             {
-                MessageBox.Show("Thy buns are too powerful! Please call" +
+                MessageBox.Show("Thy buns are too powerful! Please call " +
                     "1-888-867-5309 to place your order, or remove something " +
                     "from your cart", "Cart Full");
 

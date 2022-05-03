@@ -12,7 +12,6 @@ namespace Backend
         private double _subTotal;
         private double _tax;
         private double _total;
-        private int _itemsInCart = 0;
 
         public Order()
         {
