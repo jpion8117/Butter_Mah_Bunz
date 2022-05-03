@@ -147,11 +147,13 @@ namespace Butter_Mah_Bunz
                     fillWithOrder.Add("Order Due: " + _pickupTime.ToString("t"));
                  
                     File.WriteAllLines(path, fillWithOrder);
+
+                    this.NavigationService.Navigate(new PayConfirm(_pickupTime));
                 }
                 else
                 {
                     //you really shouldnt be here....like seriously how are you here.
-                    if (counter == 2)
+                    if (counter >= 2)
                     {
                         MessageBox.Show("You really like pushing buttons dont you?");
                         counter = 0;
@@ -167,8 +169,6 @@ namespace Butter_Mah_Bunz
                         counter++;
                     }
                 }
-
-                this.NavigationService.Navigate(new PayConfirm(_pickupTime));
             }
         }
 

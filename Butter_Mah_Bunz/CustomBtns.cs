@@ -167,8 +167,8 @@ namespace Butter_Mah_Bunz
                 //Formatting
                 enhName.Width = 150;
                 enhName.HorizontalAlignment = HorizontalAlignment.Left;
-                enhName.Margin = new Thickness(35, 5, 0, 3);
-                enhName.FontSize = 8;
+                enhName.Margin = new Thickness(35, 3, 0, 3);
+                enhName.FontSize = 10;
                 //Adds formatted content to panel
                 itemStack.Children.Add(enhName);
             }
