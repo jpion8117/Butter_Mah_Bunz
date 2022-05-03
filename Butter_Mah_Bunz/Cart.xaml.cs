@@ -42,13 +42,7 @@ namespace Butter_Mah_Bunz
 
         private void ToPayments(object sender, RoutedEventArgs e)
         {
-            //temporary bypass for testing
-            MessageBox.Show("I temporarily bypassed the payment page to go straight to the " +
-                "confirmation screen. This code needs to be deleted as soon as payment page logic is " +
-                "done...");
-            this.NavigationService.Navigate(new PayConfirm());
-
-            //this.NavigationService.Navigate(new PaymentPage());
+            this.NavigationService.Navigate(new PaymentPage());
         }
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
