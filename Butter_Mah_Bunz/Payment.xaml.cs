@@ -21,6 +21,8 @@ namespace Butter_Mah_Bunz
     ///</summary>
     public partial class PaymentPage : Page
     {
+
+        private TimeOnly _pickupTime = new TimeOnly();
         public PaymentPage()
         {
             InitializeComponent();
@@ -45,8 +47,6 @@ namespace Butter_Mah_Bunz
         private bool InputtedSomething = false;
         private int counter = 0;
         private string orderNum = DateTime.Now.ToString();
-        private string pickUpLater = "";
-        private bool pickLater = false;
 
         //it should be checking these things for at lease one item first
         private void FinishBtn_Click(object sender, RoutedEventArgs e)
@@ -71,7 +71,7 @@ namespace Butter_Mah_Bunz
                     {
                         Directory.CreateDirectory("Orders/Completed_Orders");
                     }
-                    string path = orderNum+"_order.txt";
+                    string path = "Orders/" + orderNum + "_order.txt";
                     List<string> fillWithOrder= new List<string>();
                     string menuTitle = ("Order: " + orderNum);
                     string payThere = "Payment Received.";
@@ -81,32 +81,45 @@ namespace Butter_Mah_Bunz
                         File.Delete(path);
                     }
                     fillWithOrder.Add(menuTitle);
+                    fillWithOrder.Add("");
+                    fillWithOrder.Add("===========================================================================");
+                    fillWithOrder.Add("");
                     if (thisIsHereToCheckIfSomethingWasClicked == true)
                     {
                         payThere = "Pay at pickup.";
                     }
-                    if (pickLater == true)
+                    //if (pickLater == true)
+                    //{
+                    //   int tempHoldMin = 0;
+                    //   int maxHold=0;
+                    //   if(maxHold == 1)
+                    //   {
+                    //        tempHoldMin =15;
+                    //   }
+                    //    if(maxHold == 2)
+                    //   {
+                    //        tempHoldMin =30;
+                    //   }
+                    //    if(maxHold == 3)
+                    //    {
+                    //        tempHoldMin =45;
+                    //    }
+                    //    if (maxHold == 4)
+                    //    {
+                    //        tempHoldMin=60;
+                    //    }
+                    //    pickUpLater = DateTime.Now.AddMinutes(tempHoldMin).ToString();
+                    //}
+                    string put = PickupTime.SelectedValue.ToString() ?? "";
+                    if(put.Contains("Butta"))
                     {
-                       int tempHoldMin = 0;
-                       int maxHold=0;
-                       if(maxHold == 1)
-                       {
-                            tempHoldMin =15;
-                       }
-                        if(maxHold == 2)
-                       {
-                            tempHoldMin =30;
-                       }
-                        if(maxHold == 3)
-                        {
-                            tempHoldMin =45;
-                        }
-                        if (maxHold == 4)
-                        {
-                            tempHoldMin=60;
-                        }
-                        pickUpLater = DateTime.Now.AddMinutes(tempHoldMin).ToString();
+                        string tmp = put.Replace("Butta Me Up! (", "");
+                        tmp = tmp.Replace(")", "");
+                        _pickupTime = TimeOnly.Parse(tmp);
                     }
+                    else
+                        _pickupTime= TimeOnly.Parse(put);
+
                     int counter = 1;
                     foreach (string[] item in CoreComponents.CartDetails) {
 
@@ -126,13 +139,13 @@ namespace Butter_Mah_Bunz
                         }
                         counter++;
                     }
+                    fillWithOrder.Add("");
+                    fillWithOrder.Add("===========================================================================");
+                    fillWithOrder.Add("");
                     fillWithOrder.Add(payThere);
-                    if(pickLater == true)
-                    {
-                        string announcement ="Your scheduled pick up time will be.";
-                        fillWithOrder.Add(announcement);
-                        fillWithOrder.Add(pickUpLater);
-                    }
+                    fillWithOrder.Add("");
+                    fillWithOrder.Add("Order Due: " + _pickupTime.ToString("t"));
+                 
                     File.WriteAllLines(path, fillWithOrder);
                 }
                 else
@@ -155,7 +168,7 @@ namespace Butter_Mah_Bunz
                     }
                 }
 
-                this.NavigationService.Navigate(new PayConfirm());
+                this.NavigationService.Navigate(new PayConfirm(_pickupTime));
             }
         }
 

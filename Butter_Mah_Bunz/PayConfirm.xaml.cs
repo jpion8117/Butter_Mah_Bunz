@@ -26,7 +26,7 @@ namespace Butter_Mah_Bunz
     /// </summary>
     public partial class PayConfirm : Page
     {
-        public PayConfirm()
+        public PayConfirm(TimeOnly pickupTime)
         {
             InitializeComponent();
 
@@ -92,7 +92,7 @@ namespace Butter_Mah_Bunz
 
             orderDetailsExpander.Content = orderDetailsCtnt;
 
-            orderReadyTime.Text = "See you at " + DateTime.Now.AddMinutes(30).ToShortTimeString();
+            orderReadyTime.Text = "See you at " + pickupTime.ToShortTimeString();
         }
 
         private void homeButton_Click(object sender, RoutedEventArgs e)

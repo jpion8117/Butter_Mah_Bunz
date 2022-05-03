@@ -45,21 +45,21 @@
                         <ColumnDefinition Width="23*"/>
                     </Grid.ColumnDefinitions>
                     <TextBlock Margin="30,20,30,10" Grid.Row="0"  Text="Name On Card" TextAlignment="Center" FontSize="20" Grid.ColumnSpan="2"/>
-                    <TextBox x:Name="NameOnCard" HorizontalAlignment="Left" Margin="134,0,0,0" TextWrapping="Wrap" Grid.ColumnSpan="2"
-                        Text="" VerticalAlignment="Center" Width="225" Height="40" Grid.Column="1"/>
+                    <TextBox x:Name="NameOnCard" HorizontalAlignment="Left" VerticalContentAlignment="Center" Margin="134,0,0,0" TextWrapping="Wrap" Grid.ColumnSpan="2"
+                        Text="" VerticalAlignment="Center" Width="225" Height="40" Grid.Column="1" FontSize="16"/>
                     <TextBlock Margin="30,20,30,10" Grid.Row="1" Text="Card Number" TextAlignment="Center" FontSize="20" Grid.ColumnSpan="2"/>
-                    <TextBox x:Name="CardNum" HorizontalAlignment="Left" Margin="134,0,0,0" TextWrapping="Wrap" Grid.Row="1" Grid.ColumnSpan="2"
+                    <TextBox x:Name="CardNum" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="134,0,0,0" TextWrapping="Wrap" Grid.Row="1" Grid.ColumnSpan="2"
                         Text="" VerticalAlignment="Center" Width="225" Height="40" Grid.Column="1"
-                             TextChanged="TextBox_TextChanged"/>
+                             TextChanged="TextBox_TextChanged" FontSize="16"/>
                     <TextBlock Margin="10,22,141,21" Grid.Row="2" Text="Zip" TextAlignment="Center" FontSize="20" Grid.ColumnSpan="2"/>
-                    <TextBox x:Name="Zip" HorizontalAlignment="Left" Margin="18,0,0,0" TextWrapping="Wrap" Grid.Row="2" Grid.Column="1"
-                        Text="" VerticalAlignment="Center" Width="122" Height="40"/>
+                    <TextBox x:Name="Zip" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="18,0,0,0" TextWrapping="Wrap" Grid.Row="2" Grid.Column="1"
+                        Text="" VerticalAlignment="Center" Width="122" Height="40" FontSize="16"/>
                     <TextBlock Margin="7,22,144,21" Grid.Row="2" Grid.Column ="2" Text="CCV" TextAlignment="Center" FontSize="20"/>
-                    <TextBox x:Name="CCV" HorizontalAlignment="Left" Margin="60,0,0,0" TextWrapping="Wrap" Grid.Row="2" Grid.Column="2"
-                        Text="" VerticalAlignment="Center" Width="122" Height="40"/>
+                    <TextBox x:Name="CCV" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="60,0,0,0" TextWrapping="Wrap" Grid.Row="2" Grid.Column="2"
+                        Text="" VerticalAlignment="Center" Width="122" Height="40" FontSize="16"/>
                     <TextBlock Margin="10,22,141,21" Grid.Row="3" Text="EXP:" TextAlignment="Center" FontSize="20" Grid.ColumnSpan="2"/>
-                    <TextBox x:Name="EXP" HorizontalAlignment="Left" Margin="18,0,0,0" TextWrapping="Wrap" Grid.Row="3" Grid.Column="1"
-                        Text="" VerticalAlignment="Center" Width="122" Height="40"/>
+                    <TextBox x:Name="EXP" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="18,0,0,0" TextWrapping="Wrap" Grid.Row="3" Grid.Column="1"
+                        Text="" VerticalAlignment="Center" Width="122" Height="40" FontSize="16"/>
                 </Grid>
                 <Label Content="-OR-" FontFamily="/Fonts/#Indie Flower" FontSize="40" TextElement.FontStyle="Italic" 
                     HorizontalAlignment="Center" Margin="0,352,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Center" 
@@ -70,7 +70,7 @@
                 <ComboBox x:Name="PickupTime" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="151,467,80,103"/>
             </Grid>
             <Grid Width="414" Margin="0,644,0,0">
-                <TextBox HorizontalAlignment="Left" TextWrapping="Wrap" Text="Order Total:" 
+                <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Order Total:" 
                     VerticalAlignment="Top" Width="186" Height="38" Background="#EDD4AB"
                     FontSize="30" Margin="31,0,0,0" FontFamily="/Fonts/#Indie Flower"/>
                 <Label x:Name="OrderTotal" Content="" HorizontalAlignment="Left" Margin="222,-5,0,0" 
