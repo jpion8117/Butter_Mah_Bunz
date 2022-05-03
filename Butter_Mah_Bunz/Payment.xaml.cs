@@ -31,6 +31,8 @@ namespace Butter_Mah_Bunz
         private bool InputtedSomething = false;
         private int counter = 0;
         private string orderNum = DateTime.Now.ToString();
+        private string pickUpLater = "";
+        private bool pickLater = false;
 
         //it should be checking these things for at lease one item first
         private void FinishBtn_Click(object sender, RoutedEventArgs e)
@@ -58,24 +60,53 @@ namespace Butter_Mah_Bunz
                     {
                         payThere = "Pay at pickup.";
                     }
+                    if (pickLater == true)
+                    {
+                       int tempHoldMin = 0;
+                       int maxHold=0;
+                       if(maxHold == 1)
+                       {
+                            tempHoldMin =15;
+                       }
+                        if(maxHold == 2)
+                       {
+                            tempHoldMin =30;
+                       }
+                        if(maxHold == 3)
+                        {
+                            tempHoldMin =45;
+                        }
+                        if (maxHold == 4)
+                        {
+                            tempHoldMin=60;
+                        }
+                        pickUpLater = DateTime.Now.AddMinutes(tempHoldMin).ToString();
+                    }
                     int counter = 1;
                     foreach (string[] item in CoreComponents.CartDetails) {
 
                         string fullTest = (counter +": "+ item[1] + "--Priced: " + item[4]).ToString(); 
                         fillWithOrder.Add(fullTest);
                         //Unleash when enhancements are available
-                        //if (item[5] != null)
-                        //{
-                        //   string enchancmentIsHere = "--Enhancements:";
-                        //  foreach (char items2 in item[5])
-                        //  {
-                        //      string itemHolder = items2.ToString();
-                        //      fillWithOrder.Add(itemHolder);
-                        // }
-                        //}
+                        if (item[5] != null)
+                        {
+                          string enchancmentIsHere = "--Enhancements:";
+                            int lengthHolder = item.Length;
+                          for (int i= 5;i<lengthHolder ; i++)
+                          {
+                              string itemHolder = item[i];
+                              fillWithOrder.Add(itemHolder);
+                         }
+                        }
                         counter++;
                     }
                     fillWithOrder.Add(payThere);
+                    if(pickLater == true)
+                    {
+                        string announcement ="Your scheduled pick up time will be.";
+                        fillWithOrder.Add(announcement);
+                        fillWithOrder.Add(pickUpLater);
+                    }
                     File.WriteAllLines(path, fillWithOrder);
                 }
                 else
