@@ -80,9 +80,15 @@ namespace Butter_Mah_Bunz
 
         public void addItemToCart(object sender, RoutedEventArgs e)
         {
-            CoreComponents.addToCart(_item);
-
-            _pageRef.CartCount.Text = CoreComponents.CartCount.ToString();
+            if (CoreComponents.OpenForBusiness)
+            {
+                CoreComponents.addToCart(_item);
+                _pageRef.CartCount.Text = CoreComponents.CartCount.ToString();
+            }
+            else
+            {
+                MessageBox.Show("You can look, but you can't touch!", "Online orders are currently closed.");
+            }
         }
     }
 

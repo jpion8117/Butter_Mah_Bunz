@@ -102,19 +102,35 @@ namespace Butter_Mah_Bunz
 
         private void ToCart(object sender, RoutedEventArgs e)
         {
-            //add current item to the cart
-            CoreComponents.addToCart(_item);
 
-            if (!CoreComponents.CartEmpty)
-                this.NavigationService.Navigate(new Cart());
+            if (CoreComponents.OpenForBusiness)
+            {
+                //add current item to the cart
+                CoreComponents.addToCart(_item);
+
+                if (!CoreComponents.CartEmpty)
+                    this.NavigationService.Navigate(new Cart());
+                else
+                    MessageBox.Show("Thy buns remain barren (Cart is empty).", "Cart Empty");
+            }
             else
-                MessageBox.Show("Thy buns remain barren (Cart is empty).", "Cart Empty");
+            {
+                MessageBox.Show("You can look, but you can't touch!", "Online orders are currently closed.");
+            }
         }
 
         private void AddToCart(object sender, RoutedEventArgs e)
         {
-            CoreComponents.addToCart(_item);
-            this.NavigationService.GoBack();
+
+            if (CoreComponents.OpenForBusiness)
+            {
+                CoreComponents.addToCart(_item);
+                this.NavigationService.GoBack();
+            }
+            else
+            {
+                MessageBox.Show("You can look, but you can't touch!", "Online orders are currently closed.");
+            }
         }
     }
 }

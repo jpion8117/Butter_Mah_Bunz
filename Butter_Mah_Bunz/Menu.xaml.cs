@@ -24,6 +24,13 @@ namespace Butter_Mah_Bunz
         {
             InitializeComponent();
 
+            //warn users if ordering is unavailable
+            if(!CoreComponents.OpenForBusiness)
+            {
+                MessageBox.Show("ಥ_ಥ Thy Bunz have run out of butter. We are churning as fast as " +
+                    "we can! Please feel free to check out our Bunz for another day!", "Online orders are currently closed.");
+            }
+
             if (CoreComponents.MenuReady)
             {
                 Backend.Item[] menuItems = CoreComponents.MenuItems;

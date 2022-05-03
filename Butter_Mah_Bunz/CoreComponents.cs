@@ -146,6 +146,14 @@ namespace Butter_Mah_Bunz
         {
             get { return CartDetails.Length == 0; }
         }
+        static public bool OpenForBusiness
+        {
+            get 
+            {
+                return TimeOnly.FromDateTime(DateTime.Now).IsBetween(CoreComponents.Schedule[0].StartTime,
+                            CoreComponents.Schedule[0].EndTime.AddMinutes(-45)); 
+            }
+        }
         static public int CartCount
         {
             get { return CartDetails.Length; }

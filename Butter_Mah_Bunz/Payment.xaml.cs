@@ -25,6 +25,20 @@ namespace Butter_Mah_Bunz
         {
             InitializeComponent();
 
+            DateTime PickUpWindow = getFirstTimeWindow();
+
+            PickupTime.Items.Clear();
+            PickupTime.Items.Add("Butta Me Up! ("+PickUpWindow.ToString("t")+")");
+            PickUpWindow = PickUpWindow.AddMinutes(15);
+            while (TimeOnly.FromDateTime(PickUpWindow).IsBetween(CoreComponents.Schedule[0].StartTime, 
+                CoreComponents.Schedule[0].EndTime.AddMinutes(-30)))
+            {
+                PickupTime.Items.Add(PickUpWindow.ToString("t"));
+                PickUpWindow = PickUpWindow.AddMinutes(15);
+            }
+            PickupTime.SelectedItem = PickupTime.Items[0];
+            OrderTotal.Content = CoreComponents.CartTotal.Remove(0, 7);
+
         }
         //Have no clue BUT IT DOES A THING
         private bool thisIsHereToCheckIfSomethingWasClicked = false;
@@ -37,15 +51,26 @@ namespace Butter_Mah_Bunz
         //it should be checking these things for at lease one item first
         private void FinishBtn_Click(object sender, RoutedEventArgs e)
         {
-            if (CoreComponents.CartCount > 0)
+            thisIsHereToCheckIfSomethingWasClicked = PayLater.IsChecked ?? false;
+            InputtedSomething = NameOnCard.Text.Length > 0 &&
+                                CardNum.Text.Length > 0 &&
+                                Zip.Text.Length > 0 &&
+                                CCV.Text.Length > 0 &&
+                                EXP.Text.Length > 0;
+            if (!CoreComponents.CartEmpty)
             {
-                //if they got here with a zero cart amount I have no clue how.
+                //if they got here with a zero cart amount I have no clue how. -Sam
+                //still good to check though... -Josh
                 if (thisIsHereToCheckIfSomethingWasClicked || InputtedSomething)
                 {
                     //Add a check system in here later to write a new order every time
                     orderNum=orderNum.Replace("/", "");
                     orderNum = orderNum.Replace(":", "");
                     orderNum = orderNum.Replace(" ", "");
+                    if(!Directory.Exists("Orders"))
+                    {
+                        Directory.CreateDirectory("Orders/Completed_Orders");
+                    }
                     string path = orderNum+"_order.txt";
                     List<string> fillWithOrder= new List<string>();
                     string menuTitle = ("Order: " + orderNum);
@@ -88,7 +113,7 @@ namespace Butter_Mah_Bunz
                         string fullTest = (counter +": "+ item[1] + "--Priced: " + item[4]).ToString(); 
                         fillWithOrder.Add(fullTest);
                         //Unleash when enhancements are available
-                        if (item[5] != null)
+                        if (item.Length > 5)
                         {
                           string enchancmentIsHere = "--Enhancements:";
                            fillWithOrder.Add(enchancmentIsHere);
@@ -125,11 +150,12 @@ namespace Butter_Mah_Bunz
                     }
                     if (counter == 0)
                     {
-                        MessageBox.Show("You need to select an option.");
+                        MessageBox.Show("You need to enter payment details or select pay on pickup.");
                         counter++;
                     }
                 }
 
+                this.NavigationService.Navigate(new PayConfirm());
             }
         }
 
@@ -163,6 +189,25 @@ namespace Butter_Mah_Bunz
         private void GoBack(object sender, RoutedEventArgs e)
         {
             this.NavigationService.GoBack();
+        }
+
+        private DateTime getFirstTimeWindow()
+        {
+            DateTime nextPUWindow;
+            DateTime currentTime = DateTime.Now;
+            TimeSpan roundTime = TimeSpan.FromMinutes(15);
+
+            nextPUWindow = new DateTime((currentTime.Ticks + roundTime.Ticks - 1) / roundTime.Ticks * roundTime.Ticks, currentTime.Kind);
+
+            //min pickup time is 8 minutes from current time
+            TimeSpan checkPUWindow = nextPUWindow - currentTime;
+            while (checkPUWindow.TotalMinutes < 8)
+            {
+                nextPUWindow = nextPUWindow.AddMinutes(15);
+                checkPUWindow = nextPUWindow - currentTime;
+            }
+
+            return nextPUWindow;
         }
     }
 }
