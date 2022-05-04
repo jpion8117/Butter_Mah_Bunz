@@ -16,7 +16,7 @@
     </Page.Resources>
 
     <Grid Width="414" HorizontalAlignment="Center" Background="#FFEDD4AB">
-        <ScrollViewer VerticalScrollBarVisibility="Disabled" CanContentScroll="True" IsTabStop="True" HorizontalScrollBarVisibility="Auto">
+        <ScrollViewer VerticalScrollBarVisibility="Disabled" CanContentScroll="True" IsTabStop="True" HorizontalScrollBarVisibility="Auto" Foreground="{x:Null}">
             <StackPanel x:Name="MenuBox" Orientation="Vertical" CanVerticallyScroll="True" CanHorizontallyScroll="False" VerticalAlignment="Stretch" ScrollViewer.CanContentScroll="True">
                 <Grid HorizontalAlignment="Stretch" Height="166" VerticalAlignment="Top" Background="#FFD28B17">
                     <Image Margin="10,12,249,12" Source="/Media/BMB.png" Stretch="Fill"/>
